@@ -1,0 +1,792 @@
+TimeQuest Timing Analyzer report for MaquinaeLavar
+Sat Oct 24 19:49:01 2020
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Propagation Delay
+ 12. Minimum Propagation Delay
+ 13. Fast Model Setup Summary
+ 14. Fast Model Hold Summary
+ 15. Fast Model Recovery Summary
+ 16. Fast Model Removal Summary
+ 17. Fast Model Minimum Pulse Width Summary
+ 18. Propagation Delay
+ 19. Minimum Propagation Delay
+ 20. Multicorner Timing Analysis Summary
+ 21. Progagation Delay
+ 22. Minimum Progagation Delay
+ 23. Clock Transfers
+ 24. Report TCCS
+ 25. Report RSKM
+ 26. Unconstrained Paths
+ 27. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; MaquinaeLavar                                                     ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
+----------
+; Clocks ;
+----------
+No clocks to report.
+
+
+---------------------------
+; Slow Model Fmax Summary ;
+---------------------------
+No paths to report.
+
+
+----------------------------
+; Slow Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Slow Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Propagation Delay                                                       ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Sensor_distance01[0]  ; Level[0]    ; 45.150 ; 45.150 ; 45.150 ; 45.150 ;
+; Sensor_distance01[0]  ; Level[1]    ; 47.279 ; 47.279 ; 47.279 ; 47.279 ;
+; Sensor_distance01[1]  ; Level[0]    ; 45.587 ; 45.587 ; 45.587 ; 45.587 ;
+; Sensor_distance01[1]  ; Level[1]    ; 47.716 ; 47.716 ; 47.716 ; 47.716 ;
+; Sensor_distance01[2]  ; Level[0]    ; 44.963 ; 44.963 ; 44.963 ; 44.963 ;
+; Sensor_distance01[2]  ; Level[1]    ; 47.092 ; 47.092 ; 47.092 ; 47.092 ;
+; Sensor_distance01[3]  ; Level[0]    ; 45.196 ; 45.196 ; 45.196 ; 45.196 ;
+; Sensor_distance01[3]  ; Level[1]    ; 47.325 ; 47.325 ; 47.325 ; 47.325 ;
+; Sensor_distance01[4]  ; Level[0]    ; 45.586 ; 45.586 ; 45.586 ; 45.586 ;
+; Sensor_distance01[4]  ; Level[1]    ; 47.715 ; 47.715 ; 47.715 ; 47.715 ;
+; Sensor_distance01[5]  ; Level[0]    ; 44.716 ; 44.716 ; 44.716 ; 44.716 ;
+; Sensor_distance01[5]  ; Level[1]    ; 46.845 ; 46.845 ; 46.845 ; 46.845 ;
+; Sensor_distance01[6]  ; Level[0]    ; 46.292 ; 46.292 ; 46.292 ; 46.292 ;
+; Sensor_distance01[6]  ; Level[1]    ; 48.421 ; 48.421 ; 48.421 ; 48.421 ;
+; Sensor_distance01[7]  ; Level[0]    ; 44.844 ; 44.844 ; 44.844 ; 44.844 ;
+; Sensor_distance01[7]  ; Level[1]    ; 46.973 ; 46.973 ; 46.973 ; 46.973 ;
+; Sensor_distance01[8]  ; Level[0]    ; 45.379 ; 45.379 ; 45.379 ; 45.379 ;
+; Sensor_distance01[8]  ; Level[1]    ; 47.508 ; 47.508 ; 47.508 ; 47.508 ;
+; Sensor_distance01[9]  ; Level[0]    ; 44.398 ; 44.398 ; 44.398 ; 44.398 ;
+; Sensor_distance01[9]  ; Level[1]    ; 46.527 ; 46.527 ; 46.527 ; 46.527 ;
+; Sensor_distance01[10] ; Level[0]    ; 44.333 ; 44.333 ; 44.333 ; 44.333 ;
+; Sensor_distance01[10] ; Level[1]    ; 46.462 ; 46.462 ; 46.462 ; 46.462 ;
+; Sensor_distance01[11] ; Level[0]    ; 44.843 ; 44.843 ; 44.843 ; 44.843 ;
+; Sensor_distance01[11] ; Level[1]    ; 46.972 ; 46.972 ; 46.972 ; 46.972 ;
+; Sensor_distance01[12] ; Level[0]    ; 42.974 ; 42.974 ; 42.974 ; 42.974 ;
+; Sensor_distance01[12] ; Level[1]    ; 45.103 ; 45.103 ; 45.103 ; 45.103 ;
+; Sensor_distance01[13] ; Level[0]    ; 42.126 ; 42.126 ; 42.126 ; 42.126 ;
+; Sensor_distance01[13] ; Level[1]    ; 44.255 ; 44.255 ; 44.255 ; 44.255 ;
+; Sensor_distance02[0]  ; Level[0]    ; 46.251 ; 46.251 ; 46.251 ; 46.251 ;
+; Sensor_distance02[0]  ; Level[1]    ; 48.380 ; 48.380 ; 48.380 ; 48.380 ;
+; Sensor_distance02[1]  ; Level[0]    ; 45.390 ; 45.390 ; 45.390 ; 45.390 ;
+; Sensor_distance02[1]  ; Level[1]    ; 47.519 ; 47.519 ; 47.519 ; 47.519 ;
+; Sensor_distance02[2]  ; Level[0]    ; 45.840 ; 45.840 ; 45.840 ; 45.840 ;
+; Sensor_distance02[2]  ; Level[1]    ; 47.969 ; 47.969 ; 47.969 ; 47.969 ;
+; Sensor_distance02[3]  ; Level[0]    ; 45.090 ; 45.090 ; 45.090 ; 45.090 ;
+; Sensor_distance02[3]  ; Level[1]    ; 47.219 ; 47.219 ; 47.219 ; 47.219 ;
+; Sensor_distance02[4]  ; Level[0]    ; 45.404 ; 45.404 ; 45.404 ; 45.404 ;
+; Sensor_distance02[4]  ; Level[1]    ; 47.533 ; 47.533 ; 47.533 ; 47.533 ;
+; Sensor_distance02[5]  ; Level[0]    ; 45.348 ; 45.348 ; 45.348 ; 45.348 ;
+; Sensor_distance02[5]  ; Level[1]    ; 47.477 ; 47.477 ; 47.477 ; 47.477 ;
+; Sensor_distance02[6]  ; Level[0]    ; 44.937 ; 44.937 ; 44.937 ; 44.937 ;
+; Sensor_distance02[6]  ; Level[1]    ; 47.066 ; 47.066 ; 47.066 ; 47.066 ;
+; Sensor_distance02[7]  ; Level[0]    ; 45.514 ; 45.514 ; 45.514 ; 45.514 ;
+; Sensor_distance02[7]  ; Level[1]    ; 47.643 ; 47.643 ; 47.643 ; 47.643 ;
+; Sensor_distance02[8]  ; Level[0]    ; 44.577 ; 44.577 ; 44.577 ; 44.577 ;
+; Sensor_distance02[8]  ; Level[1]    ; 46.706 ; 46.706 ; 46.706 ; 46.706 ;
+; Sensor_distance02[9]  ; Level[0]    ; 44.458 ; 44.458 ; 44.458 ; 44.458 ;
+; Sensor_distance02[9]  ; Level[1]    ; 46.587 ; 46.587 ; 46.587 ; 46.587 ;
+; Sensor_distance02[10] ; Level[0]    ; 44.311 ; 44.311 ; 44.311 ; 44.311 ;
+; Sensor_distance02[10] ; Level[1]    ; 46.440 ; 46.440 ; 46.440 ; 46.440 ;
+; Sensor_distance02[11] ; Level[0]    ; 43.991 ; 43.991 ; 43.991 ; 43.991 ;
+; Sensor_distance02[11] ; Level[1]    ; 46.120 ; 46.120 ; 46.120 ; 46.120 ;
+; Sensor_distance02[12] ; Level[0]    ; 40.169 ; 40.169 ; 40.169 ; 40.169 ;
+; Sensor_distance02[12] ; Level[1]    ; 42.298 ; 42.298 ; 42.298 ; 42.298 ;
+; Sensor_distance02[13] ; Level[0]    ; 42.620 ; 42.620 ; 42.620 ; 42.620 ;
+; Sensor_distance02[13] ; Level[1]    ; 44.749 ; 44.749 ; 44.749 ; 44.749 ;
+; Sensor_distance03[0]  ; Level[0]    ; 40.311 ; 40.311 ; 40.311 ; 40.311 ;
+; Sensor_distance03[0]  ; Level[1]    ; 42.440 ; 42.440 ; 42.440 ; 42.440 ;
+; Sensor_distance03[1]  ; Level[0]    ; 40.249 ; 40.249 ; 40.249 ; 40.249 ;
+; Sensor_distance03[1]  ; Level[1]    ; 42.378 ; 42.378 ; 42.378 ; 42.378 ;
+; Sensor_distance03[2]  ; Level[0]    ; 40.250 ; 40.250 ; 40.250 ; 40.250 ;
+; Sensor_distance03[2]  ; Level[1]    ; 42.379 ; 42.379 ; 42.379 ; 42.379 ;
+; Sensor_distance03[3]  ; Level[0]    ; 40.968 ; 40.968 ; 40.968 ; 40.968 ;
+; Sensor_distance03[3]  ; Level[1]    ; 43.097 ; 43.097 ; 43.097 ; 43.097 ;
+; Sensor_distance03[4]  ; Level[0]    ; 40.054 ; 40.054 ; 40.054 ; 40.054 ;
+; Sensor_distance03[4]  ; Level[1]    ; 42.183 ; 42.183 ; 42.183 ; 42.183 ;
+; Sensor_distance03[5]  ; Level[0]    ; 40.182 ; 40.182 ; 40.182 ; 40.182 ;
+; Sensor_distance03[5]  ; Level[1]    ; 42.311 ; 42.311 ; 42.311 ; 42.311 ;
+; Sensor_distance03[6]  ; Level[0]    ; 39.938 ; 39.938 ; 39.938 ; 39.938 ;
+; Sensor_distance03[6]  ; Level[1]    ; 42.067 ; 42.067 ; 42.067 ; 42.067 ;
+; Sensor_distance03[7]  ; Level[0]    ; 39.772 ; 39.772 ; 39.772 ; 39.772 ;
+; Sensor_distance03[7]  ; Level[1]    ; 41.901 ; 41.901 ; 41.901 ; 41.901 ;
+; Sensor_distance03[8]  ; Level[0]    ; 39.635 ; 39.635 ; 39.635 ; 39.635 ;
+; Sensor_distance03[8]  ; Level[1]    ; 41.764 ; 41.764 ; 41.764 ; 41.764 ;
+; Sensor_distance03[9]  ; Level[0]    ; 39.855 ; 39.855 ; 39.855 ; 39.855 ;
+; Sensor_distance03[9]  ; Level[1]    ; 41.984 ; 41.984 ; 41.984 ; 41.984 ;
+; Sensor_distance03[10] ; Level[0]    ; 39.748 ; 39.748 ; 39.748 ; 39.748 ;
+; Sensor_distance03[10] ; Level[1]    ; 41.877 ; 41.877 ; 41.877 ; 41.877 ;
+; Sensor_distance03[11] ; Level[0]    ; 39.673 ; 39.673 ; 39.673 ; 39.673 ;
+; Sensor_distance03[11] ; Level[1]    ; 41.802 ; 41.802 ; 41.802 ; 41.802 ;
+; Sensor_distance03[12] ; Level[0]    ; 36.063 ; 36.063 ; 36.063 ; 36.063 ;
+; Sensor_distance03[12] ; Level[1]    ; 38.192 ; 38.192 ; 38.192 ; 38.192 ;
+; Sensor_distance03[13] ; Level[0]    ; 38.868 ; 38.868 ; 38.868 ; 38.868 ;
+; Sensor_distance03[13] ; Level[1]    ; 40.997 ; 40.997 ; 40.997 ; 40.997 ;
++-----------------------+-------------+--------+--------+--------+--------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Propagation Delay                                               ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Sensor_distance01[0]  ; Level[0]    ; 15.846 ; 15.846 ; 15.846 ; 15.846 ;
+; Sensor_distance01[0]  ; Level[1]    ; 15.851 ; 15.851 ; 15.851 ; 15.851 ;
+; Sensor_distance01[1]  ; Level[0]    ; 16.283 ; 16.283 ; 16.283 ; 16.283 ;
+; Sensor_distance01[1]  ; Level[1]    ; 16.288 ; 16.288 ; 16.288 ; 16.288 ;
+; Sensor_distance01[2]  ; Level[0]    ; 15.659 ; 15.659 ; 15.659 ; 15.659 ;
+; Sensor_distance01[2]  ; Level[1]    ; 15.664 ; 15.664 ; 15.664 ; 15.664 ;
+; Sensor_distance01[3]  ; Level[0]    ; 15.892 ; 15.892 ; 15.892 ; 15.892 ;
+; Sensor_distance01[3]  ; Level[1]    ; 15.897 ; 15.897 ; 15.897 ; 15.897 ;
+; Sensor_distance01[4]  ; Level[0]    ; 16.282 ; 16.282 ; 16.282 ; 16.282 ;
+; Sensor_distance01[4]  ; Level[1]    ; 16.287 ; 16.287 ; 16.287 ; 16.287 ;
+; Sensor_distance01[5]  ; Level[0]    ; 15.096 ; 15.096 ; 15.096 ; 15.096 ;
+; Sensor_distance01[5]  ; Level[1]    ; 15.101 ; 15.101 ; 15.101 ; 15.101 ;
+; Sensor_distance01[6]  ; Level[0]    ; 17.357 ; 17.357 ; 17.357 ; 17.357 ;
+; Sensor_distance01[6]  ; Level[1]    ; 17.362 ; 17.362 ; 17.362 ; 17.362 ;
+; Sensor_distance01[7]  ; Level[0]    ; 15.909 ; 15.909 ; 15.909 ; 15.909 ;
+; Sensor_distance01[7]  ; Level[1]    ; 15.914 ; 15.914 ; 15.914 ; 15.914 ;
+; Sensor_distance01[8]  ; Level[0]    ; 16.590 ; 16.590 ; 16.590 ; 16.590 ;
+; Sensor_distance01[8]  ; Level[1]    ; 16.595 ; 16.595 ; 16.595 ; 16.595 ;
+; Sensor_distance01[9]  ; Level[0]    ; 15.609 ; 15.609 ; 15.609 ; 15.609 ;
+; Sensor_distance01[9]  ; Level[1]    ; 15.614 ; 15.614 ; 15.614 ; 15.614 ;
+; Sensor_distance01[10] ; Level[0]    ; 15.631 ; 15.631 ; 15.631 ; 15.631 ;
+; Sensor_distance01[10] ; Level[1]    ; 15.636 ; 15.636 ; 15.636 ; 15.636 ;
+; Sensor_distance01[11] ; Level[0]    ; 16.456 ; 16.456 ; 16.456 ; 16.456 ;
+; Sensor_distance01[11] ; Level[1]    ; 16.461 ; 16.461 ; 16.461 ; 16.461 ;
+; Sensor_distance01[12] ; Level[0]    ; 15.243 ; 15.243 ; 15.243 ; 15.243 ;
+; Sensor_distance01[12] ; Level[1]    ; 15.248 ; 15.248 ; 15.248 ; 15.248 ;
+; Sensor_distance01[13] ; Level[0]    ; 14.854 ; 14.854 ; 14.854 ; 14.854 ;
+; Sensor_distance01[13] ; Level[1]    ; 14.859 ; 14.859 ; 14.859 ; 14.859 ;
+; Sensor_distance02[0]  ; Level[0]    ; 16.947 ; 16.947 ; 16.947 ; 16.947 ;
+; Sensor_distance02[0]  ; Level[1]    ; 16.952 ; 16.952 ; 16.952 ; 16.952 ;
+; Sensor_distance02[1]  ; Level[0]    ; 16.086 ; 16.086 ; 16.086 ; 16.086 ;
+; Sensor_distance02[1]  ; Level[1]    ; 16.091 ; 16.091 ; 16.091 ; 16.091 ;
+; Sensor_distance02[2]  ; Level[0]    ; 16.536 ; 16.536 ; 16.536 ; 16.536 ;
+; Sensor_distance02[2]  ; Level[1]    ; 16.541 ; 16.541 ; 16.541 ; 16.541 ;
+; Sensor_distance02[3]  ; Level[0]    ; 15.786 ; 15.786 ; 15.786 ; 15.786 ;
+; Sensor_distance02[3]  ; Level[1]    ; 15.791 ; 15.791 ; 15.791 ; 15.791 ;
+; Sensor_distance02[4]  ; Level[0]    ; 16.100 ; 16.100 ; 16.100 ; 16.100 ;
+; Sensor_distance02[4]  ; Level[1]    ; 16.105 ; 16.105 ; 16.105 ; 16.105 ;
+; Sensor_distance02[5]  ; Level[0]    ; 15.729 ; 15.729 ; 15.729 ; 15.729 ;
+; Sensor_distance02[5]  ; Level[1]    ; 15.734 ; 15.734 ; 15.734 ; 15.734 ;
+; Sensor_distance02[6]  ; Level[0]    ; 16.002 ; 16.002 ; 16.002 ; 16.002 ;
+; Sensor_distance02[6]  ; Level[1]    ; 16.007 ; 16.007 ; 16.007 ; 16.007 ;
+; Sensor_distance02[7]  ; Level[0]    ; 16.579 ; 16.579 ; 16.579 ; 16.579 ;
+; Sensor_distance02[7]  ; Level[1]    ; 16.584 ; 16.584 ; 16.584 ; 16.584 ;
+; Sensor_distance02[8]  ; Level[0]    ; 15.788 ; 15.788 ; 15.788 ; 15.788 ;
+; Sensor_distance02[8]  ; Level[1]    ; 15.793 ; 15.793 ; 15.793 ; 15.793 ;
+; Sensor_distance02[9]  ; Level[0]    ; 15.669 ; 15.669 ; 15.669 ; 15.669 ;
+; Sensor_distance02[9]  ; Level[1]    ; 15.674 ; 15.674 ; 15.674 ; 15.674 ;
+; Sensor_distance02[10] ; Level[0]    ; 15.609 ; 15.609 ; 15.609 ; 15.609 ;
+; Sensor_distance02[10] ; Level[1]    ; 15.614 ; 15.614 ; 15.614 ; 15.614 ;
+; Sensor_distance02[11] ; Level[0]    ; 15.605 ; 15.605 ; 15.605 ; 15.605 ;
+; Sensor_distance02[11] ; Level[1]    ; 15.610 ; 15.610 ; 15.610 ; 15.610 ;
+; Sensor_distance02[12] ; Level[0]    ; 12.435 ; 12.435 ; 12.435 ; 12.435 ;
+; Sensor_distance02[12] ; Level[1]    ; 12.440 ; 12.440 ; 12.440 ; 12.440 ;
+; Sensor_distance02[13] ; Level[0]    ; 15.348 ; 15.348 ; 15.348 ; 15.348 ;
+; Sensor_distance02[13] ; Level[1]    ; 15.353 ; 15.353 ; 15.353 ; 15.353 ;
+; Sensor_distance03[0]  ; Level[0]    ; 12.976 ; 12.976 ; 12.976 ; 12.976 ;
+; Sensor_distance03[0]  ; Level[1]    ; 12.981 ; 12.981 ; 12.981 ; 12.981 ;
+; Sensor_distance03[1]  ; Level[0]    ; 12.914 ; 12.914 ; 12.914 ; 12.914 ;
+; Sensor_distance03[1]  ; Level[1]    ; 12.919 ; 12.919 ; 12.919 ; 12.919 ;
+; Sensor_distance03[2]  ; Level[0]    ; 12.915 ; 12.915 ; 12.915 ; 12.915 ;
+; Sensor_distance03[2]  ; Level[1]    ; 12.920 ; 12.920 ; 12.920 ; 12.920 ;
+; Sensor_distance03[3]  ; Level[0]    ; 13.633 ; 13.633 ; 13.633 ; 13.633 ;
+; Sensor_distance03[3]  ; Level[1]    ; 13.638 ; 13.638 ; 13.638 ; 13.638 ;
+; Sensor_distance03[4]  ; Level[0]    ; 12.719 ; 12.719 ; 12.719 ; 12.719 ;
+; Sensor_distance03[4]  ; Level[1]    ; 12.724 ; 12.724 ; 12.724 ; 12.724 ;
+; Sensor_distance03[5]  ; Level[0]    ; 12.847 ; 12.847 ; 12.847 ; 12.847 ;
+; Sensor_distance03[5]  ; Level[1]    ; 12.852 ; 12.852 ; 12.852 ; 12.852 ;
+; Sensor_distance03[6]  ; Level[0]    ; 12.603 ; 12.603 ; 12.603 ; 12.603 ;
+; Sensor_distance03[6]  ; Level[1]    ; 12.608 ; 12.608 ; 12.608 ; 12.608 ;
+; Sensor_distance03[7]  ; Level[0]    ; 12.437 ; 12.437 ; 12.437 ; 12.437 ;
+; Sensor_distance03[7]  ; Level[1]    ; 12.442 ; 12.442 ; 12.442 ; 12.442 ;
+; Sensor_distance03[8]  ; Level[0]    ; 12.300 ; 12.300 ; 12.300 ; 12.300 ;
+; Sensor_distance03[8]  ; Level[1]    ; 12.305 ; 12.305 ; 12.305 ; 12.305 ;
+; Sensor_distance03[9]  ; Level[0]    ; 12.520 ; 12.520 ; 12.520 ; 12.520 ;
+; Sensor_distance03[9]  ; Level[1]    ; 12.525 ; 12.525 ; 12.525 ; 12.525 ;
+; Sensor_distance03[10] ; Level[0]    ; 12.413 ; 12.413 ; 12.413 ; 12.413 ;
+; Sensor_distance03[10] ; Level[1]    ; 12.418 ; 12.418 ; 12.418 ; 12.418 ;
+; Sensor_distance03[11] ; Level[0]    ; 12.338 ; 12.338 ; 12.338 ; 12.338 ;
+; Sensor_distance03[11] ; Level[1]    ; 12.343 ; 12.343 ; 12.343 ; 12.343 ;
+; Sensor_distance03[12] ; Level[0]    ; 8.554  ; 8.554  ; 8.554  ; 8.554  ;
+; Sensor_distance03[12] ; Level[1]    ; 8.559  ; 8.559  ; 8.559  ; 8.559  ;
+; Sensor_distance03[13] ; Level[0]    ; 11.596 ; 11.596 ; 11.596 ; 11.596 ;
+; Sensor_distance03[13] ; Level[1]    ; 11.601 ; 11.601 ; 11.601 ; 11.601 ;
++-----------------------+-------------+--------+--------+--------+--------+
+
+
+----------------------------
+; Fast Model Setup Summary ;
+----------------------------
+No paths to report.
+
+
+---------------------------
+; Fast Model Hold Summary ;
+---------------------------
+No paths to report.
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast Model Minimum Pulse Width Summary ;
+------------------------------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Propagation Delay                                                       ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Sensor_distance01[0]  ; Level[0]    ; 20.883 ; 20.883 ; 20.883 ; 20.883 ;
+; Sensor_distance01[0]  ; Level[1]    ; 21.804 ; 21.804 ; 21.804 ; 21.804 ;
+; Sensor_distance01[1]  ; Level[0]    ; 21.082 ; 21.082 ; 21.082 ; 21.082 ;
+; Sensor_distance01[1]  ; Level[1]    ; 22.003 ; 22.003 ; 22.003 ; 22.003 ;
+; Sensor_distance01[2]  ; Level[0]    ; 20.806 ; 20.806 ; 20.806 ; 20.806 ;
+; Sensor_distance01[2]  ; Level[1]    ; 21.727 ; 21.727 ; 21.727 ; 21.727 ;
+; Sensor_distance01[3]  ; Level[0]    ; 20.897 ; 20.897 ; 20.897 ; 20.897 ;
+; Sensor_distance01[3]  ; Level[1]    ; 21.818 ; 21.818 ; 21.818 ; 21.818 ;
+; Sensor_distance01[4]  ; Level[0]    ; 21.079 ; 21.079 ; 21.079 ; 21.079 ;
+; Sensor_distance01[4]  ; Level[1]    ; 22.000 ; 22.000 ; 22.000 ; 22.000 ;
+; Sensor_distance01[5]  ; Level[0]    ; 20.671 ; 20.671 ; 20.671 ; 20.671 ;
+; Sensor_distance01[5]  ; Level[1]    ; 21.592 ; 21.592 ; 21.592 ; 21.592 ;
+; Sensor_distance01[6]  ; Level[0]    ; 21.526 ; 21.526 ; 21.526 ; 21.526 ;
+; Sensor_distance01[6]  ; Level[1]    ; 22.447 ; 22.447 ; 22.447 ; 22.447 ;
+; Sensor_distance01[7]  ; Level[0]    ; 20.704 ; 20.704 ; 20.704 ; 20.704 ;
+; Sensor_distance01[7]  ; Level[1]    ; 21.625 ; 21.625 ; 21.625 ; 21.625 ;
+; Sensor_distance01[8]  ; Level[0]    ; 21.053 ; 21.053 ; 21.053 ; 21.053 ;
+; Sensor_distance01[8]  ; Level[1]    ; 21.974 ; 21.974 ; 21.974 ; 21.974 ;
+; Sensor_distance01[9]  ; Level[0]    ; 20.528 ; 20.528 ; 20.528 ; 20.528 ;
+; Sensor_distance01[9]  ; Level[1]    ; 21.449 ; 21.449 ; 21.449 ; 21.449 ;
+; Sensor_distance01[10] ; Level[0]    ; 20.441 ; 20.441 ; 20.441 ; 20.441 ;
+; Sensor_distance01[10] ; Level[1]    ; 21.362 ; 21.362 ; 21.362 ; 21.362 ;
+; Sensor_distance01[11] ; Level[0]    ; 20.808 ; 20.808 ; 20.808 ; 20.808 ;
+; Sensor_distance01[11] ; Level[1]    ; 21.729 ; 21.729 ; 21.729 ; 21.729 ;
+; Sensor_distance01[12] ; Level[0]    ; 19.731 ; 19.731 ; 19.731 ; 19.731 ;
+; Sensor_distance01[12] ; Level[1]    ; 20.652 ; 20.652 ; 20.652 ; 20.652 ;
+; Sensor_distance01[13] ; Level[0]    ; 19.412 ; 19.412 ; 19.412 ; 19.412 ;
+; Sensor_distance01[13] ; Level[1]    ; 20.333 ; 20.333 ; 20.333 ; 20.333 ;
+; Sensor_distance02[0]  ; Level[0]    ; 21.455 ; 21.455 ; 21.455 ; 21.455 ;
+; Sensor_distance02[0]  ; Level[1]    ; 22.376 ; 22.376 ; 22.376 ; 22.376 ;
+; Sensor_distance02[1]  ; Level[0]    ; 21.011 ; 21.011 ; 21.011 ; 21.011 ;
+; Sensor_distance02[1]  ; Level[1]    ; 21.932 ; 21.932 ; 21.932 ; 21.932 ;
+; Sensor_distance02[2]  ; Level[0]    ; 21.250 ; 21.250 ; 21.250 ; 21.250 ;
+; Sensor_distance02[2]  ; Level[1]    ; 22.171 ; 22.171 ; 22.171 ; 22.171 ;
+; Sensor_distance02[3]  ; Level[0]    ; 20.839 ; 20.839 ; 20.839 ; 20.839 ;
+; Sensor_distance02[3]  ; Level[1]    ; 21.760 ; 21.760 ; 21.760 ; 21.760 ;
+; Sensor_distance02[4]  ; Level[0]    ; 20.984 ; 20.984 ; 20.984 ; 20.984 ;
+; Sensor_distance02[4]  ; Level[1]    ; 21.905 ; 21.905 ; 21.905 ; 21.905 ;
+; Sensor_distance02[5]  ; Level[0]    ; 20.965 ; 20.965 ; 20.965 ; 20.965 ;
+; Sensor_distance02[5]  ; Level[1]    ; 21.886 ; 21.886 ; 21.886 ; 21.886 ;
+; Sensor_distance02[6]  ; Level[0]    ; 20.770 ; 20.770 ; 20.770 ; 20.770 ;
+; Sensor_distance02[6]  ; Level[1]    ; 21.691 ; 21.691 ; 21.691 ; 21.691 ;
+; Sensor_distance02[7]  ; Level[0]    ; 21.040 ; 21.040 ; 21.040 ; 21.040 ;
+; Sensor_distance02[7]  ; Level[1]    ; 21.961 ; 21.961 ; 21.961 ; 21.961 ;
+; Sensor_distance02[8]  ; Level[0]    ; 20.606 ; 20.606 ; 20.606 ; 20.606 ;
+; Sensor_distance02[8]  ; Level[1]    ; 21.527 ; 21.527 ; 21.527 ; 21.527 ;
+; Sensor_distance02[9]  ; Level[0]    ; 20.541 ; 20.541 ; 20.541 ; 20.541 ;
+; Sensor_distance02[9]  ; Level[1]    ; 21.462 ; 21.462 ; 21.462 ; 21.462 ;
+; Sensor_distance02[10] ; Level[0]    ; 20.448 ; 20.448 ; 20.448 ; 20.448 ;
+; Sensor_distance02[10] ; Level[1]    ; 21.369 ; 21.369 ; 21.369 ; 21.369 ;
+; Sensor_distance02[11] ; Level[0]    ; 20.362 ; 20.362 ; 20.362 ; 20.362 ;
+; Sensor_distance02[11] ; Level[1]    ; 21.283 ; 21.283 ; 21.283 ; 21.283 ;
+; Sensor_distance02[12] ; Level[0]    ; 17.858 ; 17.858 ; 17.858 ; 17.858 ;
+; Sensor_distance02[12] ; Level[1]    ; 18.779 ; 18.779 ; 18.779 ; 18.779 ;
+; Sensor_distance02[13] ; Level[0]    ; 19.610 ; 19.610 ; 19.610 ; 19.610 ;
+; Sensor_distance02[13] ; Level[1]    ; 20.531 ; 20.531 ; 20.531 ; 20.531 ;
+; Sensor_distance03[0]  ; Level[0]    ; 18.560 ; 18.560 ; 18.560 ; 18.560 ;
+; Sensor_distance03[0]  ; Level[1]    ; 19.481 ; 19.481 ; 19.481 ; 19.481 ;
+; Sensor_distance03[1]  ; Level[0]    ; 18.537 ; 18.537 ; 18.537 ; 18.537 ;
+; Sensor_distance03[1]  ; Level[1]    ; 19.458 ; 19.458 ; 19.458 ; 19.458 ;
+; Sensor_distance03[2]  ; Level[0]    ; 18.552 ; 18.552 ; 18.552 ; 18.552 ;
+; Sensor_distance03[2]  ; Level[1]    ; 19.473 ; 19.473 ; 19.473 ; 19.473 ;
+; Sensor_distance03[3]  ; Level[0]    ; 18.944 ; 18.944 ; 18.944 ; 18.944 ;
+; Sensor_distance03[3]  ; Level[1]    ; 19.865 ; 19.865 ; 19.865 ; 19.865 ;
+; Sensor_distance03[4]  ; Level[0]    ; 18.462 ; 18.462 ; 18.462 ; 18.462 ;
+; Sensor_distance03[4]  ; Level[1]    ; 19.383 ; 19.383 ; 19.383 ; 19.383 ;
+; Sensor_distance03[5]  ; Level[0]    ; 18.504 ; 18.504 ; 18.504 ; 18.504 ;
+; Sensor_distance03[5]  ; Level[1]    ; 19.425 ; 19.425 ; 19.425 ; 19.425 ;
+; Sensor_distance03[6]  ; Level[0]    ; 18.399 ; 18.399 ; 18.399 ; 18.399 ;
+; Sensor_distance03[6]  ; Level[1]    ; 19.320 ; 19.320 ; 19.320 ; 19.320 ;
+; Sensor_distance03[7]  ; Level[0]    ; 18.313 ; 18.313 ; 18.313 ; 18.313 ;
+; Sensor_distance03[7]  ; Level[1]    ; 19.234 ; 19.234 ; 19.234 ; 19.234 ;
+; Sensor_distance03[8]  ; Level[0]    ; 18.226 ; 18.226 ; 18.226 ; 18.226 ;
+; Sensor_distance03[8]  ; Level[1]    ; 19.147 ; 19.147 ; 19.147 ; 19.147 ;
+; Sensor_distance03[9]  ; Level[0]    ; 18.332 ; 18.332 ; 18.332 ; 18.332 ;
+; Sensor_distance03[9]  ; Level[1]    ; 19.253 ; 19.253 ; 19.253 ; 19.253 ;
+; Sensor_distance03[10] ; Level[0]    ; 18.284 ; 18.284 ; 18.284 ; 18.284 ;
+; Sensor_distance03[10] ; Level[1]    ; 19.205 ; 19.205 ; 19.205 ; 19.205 ;
+; Sensor_distance03[11] ; Level[0]    ; 18.236 ; 18.236 ; 18.236 ; 18.236 ;
+; Sensor_distance03[11] ; Level[1]    ; 19.157 ; 19.157 ; 19.157 ; 19.157 ;
+; Sensor_distance03[12] ; Level[0]    ; 15.996 ; 15.996 ; 15.996 ; 15.996 ;
+; Sensor_distance03[12] ; Level[1]    ; 16.917 ; 16.917 ; 16.917 ; 16.917 ;
+; Sensor_distance03[13] ; Level[0]    ; 17.897 ; 17.897 ; 17.897 ; 17.897 ;
+; Sensor_distance03[13] ; Level[1]    ; 18.818 ; 18.818 ; 18.818 ; 18.818 ;
++-----------------------+-------------+--------+--------+--------+--------+
+
+
++---------------------------------------------------------------------+
+; Minimum Propagation Delay                                           ;
++-----------------------+-------------+-------+-------+-------+-------+
+; Input Port            ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++-----------------------+-------------+-------+-------+-------+-------+
+; Sensor_distance01[0]  ; Level[0]    ; 8.276 ; 8.276 ; 8.276 ; 8.276 ;
+; Sensor_distance01[0]  ; Level[1]    ; 8.262 ; 8.262 ; 8.262 ; 8.262 ;
+; Sensor_distance01[1]  ; Level[0]    ; 8.475 ; 8.475 ; 8.475 ; 8.475 ;
+; Sensor_distance01[1]  ; Level[1]    ; 8.461 ; 8.461 ; 8.461 ; 8.461 ;
+; Sensor_distance01[2]  ; Level[0]    ; 8.199 ; 8.199 ; 8.199 ; 8.199 ;
+; Sensor_distance01[2]  ; Level[1]    ; 8.185 ; 8.185 ; 8.185 ; 8.185 ;
+; Sensor_distance01[3]  ; Level[0]    ; 8.290 ; 8.290 ; 8.290 ; 8.290 ;
+; Sensor_distance01[3]  ; Level[1]    ; 8.276 ; 8.276 ; 8.276 ; 8.276 ;
+; Sensor_distance01[4]  ; Level[0]    ; 8.472 ; 8.472 ; 8.472 ; 8.472 ;
+; Sensor_distance01[4]  ; Level[1]    ; 8.458 ; 8.458 ; 8.458 ; 8.458 ;
+; Sensor_distance01[5]  ; Level[0]    ; 7.961 ; 7.961 ; 7.961 ; 7.961 ;
+; Sensor_distance01[5]  ; Level[1]    ; 7.947 ; 7.947 ; 7.947 ; 7.947 ;
+; Sensor_distance01[6]  ; Level[0]    ; 9.076 ; 9.076 ; 9.076 ; 9.076 ;
+; Sensor_distance01[6]  ; Level[1]    ; 9.062 ; 9.062 ; 9.062 ; 9.062 ;
+; Sensor_distance01[7]  ; Level[0]    ; 8.254 ; 8.254 ; 8.254 ; 8.254 ;
+; Sensor_distance01[7]  ; Level[1]    ; 8.240 ; 8.240 ; 8.240 ; 8.240 ;
+; Sensor_distance01[8]  ; Level[0]    ; 8.634 ; 8.634 ; 8.634 ; 8.634 ;
+; Sensor_distance01[8]  ; Level[1]    ; 8.620 ; 8.620 ; 8.620 ; 8.620 ;
+; Sensor_distance01[9]  ; Level[0]    ; 8.109 ; 8.109 ; 8.109 ; 8.109 ;
+; Sensor_distance01[9]  ; Level[1]    ; 8.095 ; 8.095 ; 8.095 ; 8.095 ;
+; Sensor_distance01[10] ; Level[0]    ; 8.097 ; 8.097 ; 8.097 ; 8.097 ;
+; Sensor_distance01[10] ; Level[1]    ; 8.083 ; 8.083 ; 8.083 ; 8.083 ;
+; Sensor_distance01[11] ; Level[0]    ; 8.569 ; 8.569 ; 8.569 ; 8.569 ;
+; Sensor_distance01[11] ; Level[1]    ; 8.555 ; 8.555 ; 8.555 ; 8.555 ;
+; Sensor_distance01[12] ; Level[0]    ; 7.946 ; 7.946 ; 7.946 ; 7.946 ;
+; Sensor_distance01[12] ; Level[1]    ; 7.932 ; 7.932 ; 7.932 ; 7.932 ;
+; Sensor_distance01[13] ; Level[0]    ; 7.794 ; 7.794 ; 7.794 ; 7.794 ;
+; Sensor_distance01[13] ; Level[1]    ; 7.780 ; 7.780 ; 7.780 ; 7.780 ;
+; Sensor_distance02[0]  ; Level[0]    ; 8.848 ; 8.848 ; 8.848 ; 8.848 ;
+; Sensor_distance02[0]  ; Level[1]    ; 8.834 ; 8.834 ; 8.834 ; 8.834 ;
+; Sensor_distance02[1]  ; Level[0]    ; 8.404 ; 8.404 ; 8.404 ; 8.404 ;
+; Sensor_distance02[1]  ; Level[1]    ; 8.390 ; 8.390 ; 8.390 ; 8.390 ;
+; Sensor_distance02[2]  ; Level[0]    ; 8.643 ; 8.643 ; 8.643 ; 8.643 ;
+; Sensor_distance02[2]  ; Level[1]    ; 8.629 ; 8.629 ; 8.629 ; 8.629 ;
+; Sensor_distance02[3]  ; Level[0]    ; 8.232 ; 8.232 ; 8.232 ; 8.232 ;
+; Sensor_distance02[3]  ; Level[1]    ; 8.218 ; 8.218 ; 8.218 ; 8.218 ;
+; Sensor_distance02[4]  ; Level[0]    ; 8.377 ; 8.377 ; 8.377 ; 8.377 ;
+; Sensor_distance02[4]  ; Level[1]    ; 8.363 ; 8.363 ; 8.363 ; 8.363 ;
+; Sensor_distance02[5]  ; Level[0]    ; 8.253 ; 8.253 ; 8.253 ; 8.253 ;
+; Sensor_distance02[5]  ; Level[1]    ; 8.239 ; 8.239 ; 8.239 ; 8.239 ;
+; Sensor_distance02[6]  ; Level[0]    ; 8.320 ; 8.320 ; 8.320 ; 8.320 ;
+; Sensor_distance02[6]  ; Level[1]    ; 8.306 ; 8.306 ; 8.306 ; 8.306 ;
+; Sensor_distance02[7]  ; Level[0]    ; 8.590 ; 8.590 ; 8.590 ; 8.590 ;
+; Sensor_distance02[7]  ; Level[1]    ; 8.576 ; 8.576 ; 8.576 ; 8.576 ;
+; Sensor_distance02[8]  ; Level[0]    ; 8.187 ; 8.187 ; 8.187 ; 8.187 ;
+; Sensor_distance02[8]  ; Level[1]    ; 8.173 ; 8.173 ; 8.173 ; 8.173 ;
+; Sensor_distance02[9]  ; Level[0]    ; 8.122 ; 8.122 ; 8.122 ; 8.122 ;
+; Sensor_distance02[9]  ; Level[1]    ; 8.108 ; 8.108 ; 8.108 ; 8.108 ;
+; Sensor_distance02[10] ; Level[0]    ; 8.104 ; 8.104 ; 8.104 ; 8.104 ;
+; Sensor_distance02[10] ; Level[1]    ; 8.090 ; 8.090 ; 8.090 ; 8.090 ;
+; Sensor_distance02[11] ; Level[0]    ; 8.121 ; 8.121 ; 8.121 ; 8.121 ;
+; Sensor_distance02[11] ; Level[1]    ; 8.107 ; 8.107 ; 8.107 ; 8.107 ;
+; Sensor_distance02[12] ; Level[0]    ; 6.071 ; 6.071 ; 6.071 ; 6.071 ;
+; Sensor_distance02[12] ; Level[1]    ; 6.057 ; 6.057 ; 6.057 ; 6.057 ;
+; Sensor_distance02[13] ; Level[0]    ; 7.992 ; 7.992 ; 7.992 ; 7.992 ;
+; Sensor_distance02[13] ; Level[1]    ; 7.978 ; 7.978 ; 7.978 ; 7.978 ;
+; Sensor_distance03[0]  ; Level[0]    ; 6.892 ; 6.892 ; 6.892 ; 6.892 ;
+; Sensor_distance03[0]  ; Level[1]    ; 6.884 ; 6.884 ; 6.884 ; 6.884 ;
+; Sensor_distance03[1]  ; Level[0]    ; 6.875 ; 6.875 ; 6.875 ; 6.875 ;
+; Sensor_distance03[1]  ; Level[1]    ; 6.861 ; 6.861 ; 6.861 ; 6.861 ;
+; Sensor_distance03[2]  ; Level[0]    ; 6.890 ; 6.890 ; 6.890 ; 6.890 ;
+; Sensor_distance03[2]  ; Level[1]    ; 6.876 ; 6.876 ; 6.876 ; 6.876 ;
+; Sensor_distance03[3]  ; Level[0]    ; 7.282 ; 7.282 ; 7.282 ; 7.282 ;
+; Sensor_distance03[3]  ; Level[1]    ; 7.268 ; 7.268 ; 7.268 ; 7.268 ;
+; Sensor_distance03[4]  ; Level[0]    ; 6.800 ; 6.800 ; 6.800 ; 6.800 ;
+; Sensor_distance03[4]  ; Level[1]    ; 6.786 ; 6.786 ; 6.786 ; 6.786 ;
+; Sensor_distance03[5]  ; Level[0]    ; 6.842 ; 6.842 ; 6.842 ; 6.842 ;
+; Sensor_distance03[5]  ; Level[1]    ; 6.828 ; 6.828 ; 6.828 ; 6.828 ;
+; Sensor_distance03[6]  ; Level[0]    ; 6.737 ; 6.737 ; 6.737 ; 6.737 ;
+; Sensor_distance03[6]  ; Level[1]    ; 6.723 ; 6.723 ; 6.723 ; 6.723 ;
+; Sensor_distance03[7]  ; Level[0]    ; 6.651 ; 6.651 ; 6.651 ; 6.651 ;
+; Sensor_distance03[7]  ; Level[1]    ; 6.637 ; 6.637 ; 6.637 ; 6.637 ;
+; Sensor_distance03[8]  ; Level[0]    ; 6.564 ; 6.564 ; 6.564 ; 6.564 ;
+; Sensor_distance03[8]  ; Level[1]    ; 6.550 ; 6.550 ; 6.550 ; 6.550 ;
+; Sensor_distance03[9]  ; Level[0]    ; 6.670 ; 6.670 ; 6.670 ; 6.670 ;
+; Sensor_distance03[9]  ; Level[1]    ; 6.656 ; 6.656 ; 6.656 ; 6.656 ;
+; Sensor_distance03[10] ; Level[0]    ; 6.622 ; 6.622 ; 6.622 ; 6.622 ;
+; Sensor_distance03[10] ; Level[1]    ; 6.608 ; 6.608 ; 6.608 ; 6.608 ;
+; Sensor_distance03[11] ; Level[0]    ; 6.574 ; 6.574 ; 6.574 ; 6.574 ;
+; Sensor_distance03[11] ; Level[1]    ; 6.560 ; 6.560 ; 6.560 ; 6.560 ;
+; Sensor_distance03[12] ; Level[0]    ; 4.288 ; 4.288 ; 4.288 ; 4.288 ;
+; Sensor_distance03[12] ; Level[1]    ; 4.274 ; 4.274 ; 4.274 ; 4.274 ;
+; Sensor_distance03[13] ; Level[0]    ; 6.279 ; 6.279 ; 6.279 ; 6.279 ;
+; Sensor_distance03[13] ; Level[1]    ; 6.265 ; 6.265 ; 6.265 ; 6.265 ;
++-----------------------+-------------+-------+-------+-------+-------+
+
+
++----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                        ;
++------------------+-------+------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+------+----------+---------+---------------------+
+; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
+; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
++------------------+-------+------+----------+---------+---------------------+
+
+
++-------------------------------------------------------------------------+
+; Progagation Delay                                                       ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-----------------------+-------------+--------+--------+--------+--------+
+; Sensor_distance01[0]  ; Level[0]    ; 45.150 ; 45.150 ; 45.150 ; 45.150 ;
+; Sensor_distance01[0]  ; Level[1]    ; 47.279 ; 47.279 ; 47.279 ; 47.279 ;
+; Sensor_distance01[1]  ; Level[0]    ; 45.587 ; 45.587 ; 45.587 ; 45.587 ;
+; Sensor_distance01[1]  ; Level[1]    ; 47.716 ; 47.716 ; 47.716 ; 47.716 ;
+; Sensor_distance01[2]  ; Level[0]    ; 44.963 ; 44.963 ; 44.963 ; 44.963 ;
+; Sensor_distance01[2]  ; Level[1]    ; 47.092 ; 47.092 ; 47.092 ; 47.092 ;
+; Sensor_distance01[3]  ; Level[0]    ; 45.196 ; 45.196 ; 45.196 ; 45.196 ;
+; Sensor_distance01[3]  ; Level[1]    ; 47.325 ; 47.325 ; 47.325 ; 47.325 ;
+; Sensor_distance01[4]  ; Level[0]    ; 45.586 ; 45.586 ; 45.586 ; 45.586 ;
+; Sensor_distance01[4]  ; Level[1]    ; 47.715 ; 47.715 ; 47.715 ; 47.715 ;
+; Sensor_distance01[5]  ; Level[0]    ; 44.716 ; 44.716 ; 44.716 ; 44.716 ;
+; Sensor_distance01[5]  ; Level[1]    ; 46.845 ; 46.845 ; 46.845 ; 46.845 ;
+; Sensor_distance01[6]  ; Level[0]    ; 46.292 ; 46.292 ; 46.292 ; 46.292 ;
+; Sensor_distance01[6]  ; Level[1]    ; 48.421 ; 48.421 ; 48.421 ; 48.421 ;
+; Sensor_distance01[7]  ; Level[0]    ; 44.844 ; 44.844 ; 44.844 ; 44.844 ;
+; Sensor_distance01[7]  ; Level[1]    ; 46.973 ; 46.973 ; 46.973 ; 46.973 ;
+; Sensor_distance01[8]  ; Level[0]    ; 45.379 ; 45.379 ; 45.379 ; 45.379 ;
+; Sensor_distance01[8]  ; Level[1]    ; 47.508 ; 47.508 ; 47.508 ; 47.508 ;
+; Sensor_distance01[9]  ; Level[0]    ; 44.398 ; 44.398 ; 44.398 ; 44.398 ;
+; Sensor_distance01[9]  ; Level[1]    ; 46.527 ; 46.527 ; 46.527 ; 46.527 ;
+; Sensor_distance01[10] ; Level[0]    ; 44.333 ; 44.333 ; 44.333 ; 44.333 ;
+; Sensor_distance01[10] ; Level[1]    ; 46.462 ; 46.462 ; 46.462 ; 46.462 ;
+; Sensor_distance01[11] ; Level[0]    ; 44.843 ; 44.843 ; 44.843 ; 44.843 ;
+; Sensor_distance01[11] ; Level[1]    ; 46.972 ; 46.972 ; 46.972 ; 46.972 ;
+; Sensor_distance01[12] ; Level[0]    ; 42.974 ; 42.974 ; 42.974 ; 42.974 ;
+; Sensor_distance01[12] ; Level[1]    ; 45.103 ; 45.103 ; 45.103 ; 45.103 ;
+; Sensor_distance01[13] ; Level[0]    ; 42.126 ; 42.126 ; 42.126 ; 42.126 ;
+; Sensor_distance01[13] ; Level[1]    ; 44.255 ; 44.255 ; 44.255 ; 44.255 ;
+; Sensor_distance02[0]  ; Level[0]    ; 46.251 ; 46.251 ; 46.251 ; 46.251 ;
+; Sensor_distance02[0]  ; Level[1]    ; 48.380 ; 48.380 ; 48.380 ; 48.380 ;
+; Sensor_distance02[1]  ; Level[0]    ; 45.390 ; 45.390 ; 45.390 ; 45.390 ;
+; Sensor_distance02[1]  ; Level[1]    ; 47.519 ; 47.519 ; 47.519 ; 47.519 ;
+; Sensor_distance02[2]  ; Level[0]    ; 45.840 ; 45.840 ; 45.840 ; 45.840 ;
+; Sensor_distance02[2]  ; Level[1]    ; 47.969 ; 47.969 ; 47.969 ; 47.969 ;
+; Sensor_distance02[3]  ; Level[0]    ; 45.090 ; 45.090 ; 45.090 ; 45.090 ;
+; Sensor_distance02[3]  ; Level[1]    ; 47.219 ; 47.219 ; 47.219 ; 47.219 ;
+; Sensor_distance02[4]  ; Level[0]    ; 45.404 ; 45.404 ; 45.404 ; 45.404 ;
+; Sensor_distance02[4]  ; Level[1]    ; 47.533 ; 47.533 ; 47.533 ; 47.533 ;
+; Sensor_distance02[5]  ; Level[0]    ; 45.348 ; 45.348 ; 45.348 ; 45.348 ;
+; Sensor_distance02[5]  ; Level[1]    ; 47.477 ; 47.477 ; 47.477 ; 47.477 ;
+; Sensor_distance02[6]  ; Level[0]    ; 44.937 ; 44.937 ; 44.937 ; 44.937 ;
+; Sensor_distance02[6]  ; Level[1]    ; 47.066 ; 47.066 ; 47.066 ; 47.066 ;
+; Sensor_distance02[7]  ; Level[0]    ; 45.514 ; 45.514 ; 45.514 ; 45.514 ;
+; Sensor_distance02[7]  ; Level[1]    ; 47.643 ; 47.643 ; 47.643 ; 47.643 ;
+; Sensor_distance02[8]  ; Level[0]    ; 44.577 ; 44.577 ; 44.577 ; 44.577 ;
+; Sensor_distance02[8]  ; Level[1]    ; 46.706 ; 46.706 ; 46.706 ; 46.706 ;
+; Sensor_distance02[9]  ; Level[0]    ; 44.458 ; 44.458 ; 44.458 ; 44.458 ;
+; Sensor_distance02[9]  ; Level[1]    ; 46.587 ; 46.587 ; 46.587 ; 46.587 ;
+; Sensor_distance02[10] ; Level[0]    ; 44.311 ; 44.311 ; 44.311 ; 44.311 ;
+; Sensor_distance02[10] ; Level[1]    ; 46.440 ; 46.440 ; 46.440 ; 46.440 ;
+; Sensor_distance02[11] ; Level[0]    ; 43.991 ; 43.991 ; 43.991 ; 43.991 ;
+; Sensor_distance02[11] ; Level[1]    ; 46.120 ; 46.120 ; 46.120 ; 46.120 ;
+; Sensor_distance02[12] ; Level[0]    ; 40.169 ; 40.169 ; 40.169 ; 40.169 ;
+; Sensor_distance02[12] ; Level[1]    ; 42.298 ; 42.298 ; 42.298 ; 42.298 ;
+; Sensor_distance02[13] ; Level[0]    ; 42.620 ; 42.620 ; 42.620 ; 42.620 ;
+; Sensor_distance02[13] ; Level[1]    ; 44.749 ; 44.749 ; 44.749 ; 44.749 ;
+; Sensor_distance03[0]  ; Level[0]    ; 40.311 ; 40.311 ; 40.311 ; 40.311 ;
+; Sensor_distance03[0]  ; Level[1]    ; 42.440 ; 42.440 ; 42.440 ; 42.440 ;
+; Sensor_distance03[1]  ; Level[0]    ; 40.249 ; 40.249 ; 40.249 ; 40.249 ;
+; Sensor_distance03[1]  ; Level[1]    ; 42.378 ; 42.378 ; 42.378 ; 42.378 ;
+; Sensor_distance03[2]  ; Level[0]    ; 40.250 ; 40.250 ; 40.250 ; 40.250 ;
+; Sensor_distance03[2]  ; Level[1]    ; 42.379 ; 42.379 ; 42.379 ; 42.379 ;
+; Sensor_distance03[3]  ; Level[0]    ; 40.968 ; 40.968 ; 40.968 ; 40.968 ;
+; Sensor_distance03[3]  ; Level[1]    ; 43.097 ; 43.097 ; 43.097 ; 43.097 ;
+; Sensor_distance03[4]  ; Level[0]    ; 40.054 ; 40.054 ; 40.054 ; 40.054 ;
+; Sensor_distance03[4]  ; Level[1]    ; 42.183 ; 42.183 ; 42.183 ; 42.183 ;
+; Sensor_distance03[5]  ; Level[0]    ; 40.182 ; 40.182 ; 40.182 ; 40.182 ;
+; Sensor_distance03[5]  ; Level[1]    ; 42.311 ; 42.311 ; 42.311 ; 42.311 ;
+; Sensor_distance03[6]  ; Level[0]    ; 39.938 ; 39.938 ; 39.938 ; 39.938 ;
+; Sensor_distance03[6]  ; Level[1]    ; 42.067 ; 42.067 ; 42.067 ; 42.067 ;
+; Sensor_distance03[7]  ; Level[0]    ; 39.772 ; 39.772 ; 39.772 ; 39.772 ;
+; Sensor_distance03[7]  ; Level[1]    ; 41.901 ; 41.901 ; 41.901 ; 41.901 ;
+; Sensor_distance03[8]  ; Level[0]    ; 39.635 ; 39.635 ; 39.635 ; 39.635 ;
+; Sensor_distance03[8]  ; Level[1]    ; 41.764 ; 41.764 ; 41.764 ; 41.764 ;
+; Sensor_distance03[9]  ; Level[0]    ; 39.855 ; 39.855 ; 39.855 ; 39.855 ;
+; Sensor_distance03[9]  ; Level[1]    ; 41.984 ; 41.984 ; 41.984 ; 41.984 ;
+; Sensor_distance03[10] ; Level[0]    ; 39.748 ; 39.748 ; 39.748 ; 39.748 ;
+; Sensor_distance03[10] ; Level[1]    ; 41.877 ; 41.877 ; 41.877 ; 41.877 ;
+; Sensor_distance03[11] ; Level[0]    ; 39.673 ; 39.673 ; 39.673 ; 39.673 ;
+; Sensor_distance03[11] ; Level[1]    ; 41.802 ; 41.802 ; 41.802 ; 41.802 ;
+; Sensor_distance03[12] ; Level[0]    ; 36.063 ; 36.063 ; 36.063 ; 36.063 ;
+; Sensor_distance03[12] ; Level[1]    ; 38.192 ; 38.192 ; 38.192 ; 38.192 ;
+; Sensor_distance03[13] ; Level[0]    ; 38.868 ; 38.868 ; 38.868 ; 38.868 ;
+; Sensor_distance03[13] ; Level[1]    ; 40.997 ; 40.997 ; 40.997 ; 40.997 ;
++-----------------------+-------------+--------+--------+--------+--------+
+
+
++---------------------------------------------------------------------+
+; Minimum Progagation Delay                                           ;
++-----------------------+-------------+-------+-------+-------+-------+
+; Input Port            ; Output Port ; RR    ; RF    ; FR    ; FF    ;
++-----------------------+-------------+-------+-------+-------+-------+
+; Sensor_distance01[0]  ; Level[0]    ; 8.276 ; 8.276 ; 8.276 ; 8.276 ;
+; Sensor_distance01[0]  ; Level[1]    ; 8.262 ; 8.262 ; 8.262 ; 8.262 ;
+; Sensor_distance01[1]  ; Level[0]    ; 8.475 ; 8.475 ; 8.475 ; 8.475 ;
+; Sensor_distance01[1]  ; Level[1]    ; 8.461 ; 8.461 ; 8.461 ; 8.461 ;
+; Sensor_distance01[2]  ; Level[0]    ; 8.199 ; 8.199 ; 8.199 ; 8.199 ;
+; Sensor_distance01[2]  ; Level[1]    ; 8.185 ; 8.185 ; 8.185 ; 8.185 ;
+; Sensor_distance01[3]  ; Level[0]    ; 8.290 ; 8.290 ; 8.290 ; 8.290 ;
+; Sensor_distance01[3]  ; Level[1]    ; 8.276 ; 8.276 ; 8.276 ; 8.276 ;
+; Sensor_distance01[4]  ; Level[0]    ; 8.472 ; 8.472 ; 8.472 ; 8.472 ;
+; Sensor_distance01[4]  ; Level[1]    ; 8.458 ; 8.458 ; 8.458 ; 8.458 ;
+; Sensor_distance01[5]  ; Level[0]    ; 7.961 ; 7.961 ; 7.961 ; 7.961 ;
+; Sensor_distance01[5]  ; Level[1]    ; 7.947 ; 7.947 ; 7.947 ; 7.947 ;
+; Sensor_distance01[6]  ; Level[0]    ; 9.076 ; 9.076 ; 9.076 ; 9.076 ;
+; Sensor_distance01[6]  ; Level[1]    ; 9.062 ; 9.062 ; 9.062 ; 9.062 ;
+; Sensor_distance01[7]  ; Level[0]    ; 8.254 ; 8.254 ; 8.254 ; 8.254 ;
+; Sensor_distance01[7]  ; Level[1]    ; 8.240 ; 8.240 ; 8.240 ; 8.240 ;
+; Sensor_distance01[8]  ; Level[0]    ; 8.634 ; 8.634 ; 8.634 ; 8.634 ;
+; Sensor_distance01[8]  ; Level[1]    ; 8.620 ; 8.620 ; 8.620 ; 8.620 ;
+; Sensor_distance01[9]  ; Level[0]    ; 8.109 ; 8.109 ; 8.109 ; 8.109 ;
+; Sensor_distance01[9]  ; Level[1]    ; 8.095 ; 8.095 ; 8.095 ; 8.095 ;
+; Sensor_distance01[10] ; Level[0]    ; 8.097 ; 8.097 ; 8.097 ; 8.097 ;
+; Sensor_distance01[10] ; Level[1]    ; 8.083 ; 8.083 ; 8.083 ; 8.083 ;
+; Sensor_distance01[11] ; Level[0]    ; 8.569 ; 8.569 ; 8.569 ; 8.569 ;
+; Sensor_distance01[11] ; Level[1]    ; 8.555 ; 8.555 ; 8.555 ; 8.555 ;
+; Sensor_distance01[12] ; Level[0]    ; 7.946 ; 7.946 ; 7.946 ; 7.946 ;
+; Sensor_distance01[12] ; Level[1]    ; 7.932 ; 7.932 ; 7.932 ; 7.932 ;
+; Sensor_distance01[13] ; Level[0]    ; 7.794 ; 7.794 ; 7.794 ; 7.794 ;
+; Sensor_distance01[13] ; Level[1]    ; 7.780 ; 7.780 ; 7.780 ; 7.780 ;
+; Sensor_distance02[0]  ; Level[0]    ; 8.848 ; 8.848 ; 8.848 ; 8.848 ;
+; Sensor_distance02[0]  ; Level[1]    ; 8.834 ; 8.834 ; 8.834 ; 8.834 ;
+; Sensor_distance02[1]  ; Level[0]    ; 8.404 ; 8.404 ; 8.404 ; 8.404 ;
+; Sensor_distance02[1]  ; Level[1]    ; 8.390 ; 8.390 ; 8.390 ; 8.390 ;
+; Sensor_distance02[2]  ; Level[0]    ; 8.643 ; 8.643 ; 8.643 ; 8.643 ;
+; Sensor_distance02[2]  ; Level[1]    ; 8.629 ; 8.629 ; 8.629 ; 8.629 ;
+; Sensor_distance02[3]  ; Level[0]    ; 8.232 ; 8.232 ; 8.232 ; 8.232 ;
+; Sensor_distance02[3]  ; Level[1]    ; 8.218 ; 8.218 ; 8.218 ; 8.218 ;
+; Sensor_distance02[4]  ; Level[0]    ; 8.377 ; 8.377 ; 8.377 ; 8.377 ;
+; Sensor_distance02[4]  ; Level[1]    ; 8.363 ; 8.363 ; 8.363 ; 8.363 ;
+; Sensor_distance02[5]  ; Level[0]    ; 8.253 ; 8.253 ; 8.253 ; 8.253 ;
+; Sensor_distance02[5]  ; Level[1]    ; 8.239 ; 8.239 ; 8.239 ; 8.239 ;
+; Sensor_distance02[6]  ; Level[0]    ; 8.320 ; 8.320 ; 8.320 ; 8.320 ;
+; Sensor_distance02[6]  ; Level[1]    ; 8.306 ; 8.306 ; 8.306 ; 8.306 ;
+; Sensor_distance02[7]  ; Level[0]    ; 8.590 ; 8.590 ; 8.590 ; 8.590 ;
+; Sensor_distance02[7]  ; Level[1]    ; 8.576 ; 8.576 ; 8.576 ; 8.576 ;
+; Sensor_distance02[8]  ; Level[0]    ; 8.187 ; 8.187 ; 8.187 ; 8.187 ;
+; Sensor_distance02[8]  ; Level[1]    ; 8.173 ; 8.173 ; 8.173 ; 8.173 ;
+; Sensor_distance02[9]  ; Level[0]    ; 8.122 ; 8.122 ; 8.122 ; 8.122 ;
+; Sensor_distance02[9]  ; Level[1]    ; 8.108 ; 8.108 ; 8.108 ; 8.108 ;
+; Sensor_distance02[10] ; Level[0]    ; 8.104 ; 8.104 ; 8.104 ; 8.104 ;
+; Sensor_distance02[10] ; Level[1]    ; 8.090 ; 8.090 ; 8.090 ; 8.090 ;
+; Sensor_distance02[11] ; Level[0]    ; 8.121 ; 8.121 ; 8.121 ; 8.121 ;
+; Sensor_distance02[11] ; Level[1]    ; 8.107 ; 8.107 ; 8.107 ; 8.107 ;
+; Sensor_distance02[12] ; Level[0]    ; 6.071 ; 6.071 ; 6.071 ; 6.071 ;
+; Sensor_distance02[12] ; Level[1]    ; 6.057 ; 6.057 ; 6.057 ; 6.057 ;
+; Sensor_distance02[13] ; Level[0]    ; 7.992 ; 7.992 ; 7.992 ; 7.992 ;
+; Sensor_distance02[13] ; Level[1]    ; 7.978 ; 7.978 ; 7.978 ; 7.978 ;
+; Sensor_distance03[0]  ; Level[0]    ; 6.892 ; 6.892 ; 6.892 ; 6.892 ;
+; Sensor_distance03[0]  ; Level[1]    ; 6.884 ; 6.884 ; 6.884 ; 6.884 ;
+; Sensor_distance03[1]  ; Level[0]    ; 6.875 ; 6.875 ; 6.875 ; 6.875 ;
+; Sensor_distance03[1]  ; Level[1]    ; 6.861 ; 6.861 ; 6.861 ; 6.861 ;
+; Sensor_distance03[2]  ; Level[0]    ; 6.890 ; 6.890 ; 6.890 ; 6.890 ;
+; Sensor_distance03[2]  ; Level[1]    ; 6.876 ; 6.876 ; 6.876 ; 6.876 ;
+; Sensor_distance03[3]  ; Level[0]    ; 7.282 ; 7.282 ; 7.282 ; 7.282 ;
+; Sensor_distance03[3]  ; Level[1]    ; 7.268 ; 7.268 ; 7.268 ; 7.268 ;
+; Sensor_distance03[4]  ; Level[0]    ; 6.800 ; 6.800 ; 6.800 ; 6.800 ;
+; Sensor_distance03[4]  ; Level[1]    ; 6.786 ; 6.786 ; 6.786 ; 6.786 ;
+; Sensor_distance03[5]  ; Level[0]    ; 6.842 ; 6.842 ; 6.842 ; 6.842 ;
+; Sensor_distance03[5]  ; Level[1]    ; 6.828 ; 6.828 ; 6.828 ; 6.828 ;
+; Sensor_distance03[6]  ; Level[0]    ; 6.737 ; 6.737 ; 6.737 ; 6.737 ;
+; Sensor_distance03[6]  ; Level[1]    ; 6.723 ; 6.723 ; 6.723 ; 6.723 ;
+; Sensor_distance03[7]  ; Level[0]    ; 6.651 ; 6.651 ; 6.651 ; 6.651 ;
+; Sensor_distance03[7]  ; Level[1]    ; 6.637 ; 6.637 ; 6.637 ; 6.637 ;
+; Sensor_distance03[8]  ; Level[0]    ; 6.564 ; 6.564 ; 6.564 ; 6.564 ;
+; Sensor_distance03[8]  ; Level[1]    ; 6.550 ; 6.550 ; 6.550 ; 6.550 ;
+; Sensor_distance03[9]  ; Level[0]    ; 6.670 ; 6.670 ; 6.670 ; 6.670 ;
+; Sensor_distance03[9]  ; Level[1]    ; 6.656 ; 6.656 ; 6.656 ; 6.656 ;
+; Sensor_distance03[10] ; Level[0]    ; 6.622 ; 6.622 ; 6.622 ; 6.622 ;
+; Sensor_distance03[10] ; Level[1]    ; 6.608 ; 6.608 ; 6.608 ; 6.608 ;
+; Sensor_distance03[11] ; Level[0]    ; 6.574 ; 6.574 ; 6.574 ; 6.574 ;
+; Sensor_distance03[11] ; Level[1]    ; 6.560 ; 6.560 ; 6.560 ; 6.560 ;
+; Sensor_distance03[12] ; Level[0]    ; 4.288 ; 4.288 ; 4.288 ; 4.288 ;
+; Sensor_distance03[12] ; Level[1]    ; 4.274 ; 4.274 ; 4.274 ; 4.274 ;
+; Sensor_distance03[13] ; Level[0]    ; 6.279 ; 6.279 ; 6.279 ; 6.279 ;
+; Sensor_distance03[13] ; Level[1]    ; 6.265 ; 6.265 ; 6.265 ; 6.265 ;
++-----------------------+-------------+-------+-------+-------+-------+
+
+
+-------------------
+; Clock Transfers ;
+-------------------
+Nothing to report.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 42    ; 42   ;
+; Unconstrained Input Port Paths  ; 84    ; 84   ;
+; Unconstrained Output Ports      ; 2     ; 2    ;
+; Unconstrained Output Port Paths ; 84    ; 84   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 24 19:49:00 2020
+Info: Command: quartus_sta MaquinaeLavar -c MaquinaeLavar
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'MaquinaeLavar.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332159): No clocks to report
+Info: Analyzing Slow Model
+Info (332140): No fmax paths to report
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
+Warning (332068): No clocks defined in design.
+Info (332140): No Setup paths to report
+Info (332140): No Hold paths to report
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332140): No Minimum Pulse Width paths to report
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4548 megabytes
+    Info: Processing ended: Sat Oct 24 19:49:01 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -1,0 +1,68 @@
+# Reading D:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do AddWater_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {D:/altera/13.0sp1/AddWater/AddWater.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity AddWater
+# -- Compiling architecture rtl of AddWater
+# 
+# vcom -93 -work work {D:/altera/13.0sp1/AddWater/tb_AddWater.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Compiling entity testbench
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling architecture tb_AddWater of testbench
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  tb_AddWater
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_AddWater 
+# ** Error: (vsim-3170) Could not find 'D:/altera/13.0sp1/AddWater/simulation/modelsim/rtl_work.tb_AddWater'.
+# 
+# Error loading design
+# Error: Error loading design 
+#        Pausing macro execution 
+# MACRO ./AddWater_run_msim_rtl_vhdl.do PAUSED at line 12
+vsim work.testbench
+# vsim work.testbench 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.testbench(tb_addwater)
+# Loading work.addwater(rtl)
+add wave -position insertpoint  \
+sim:/testbench/teste/ClothesLevel \
+sim:/testbench/teste/Finish \
+sim:/testbench/teste/Sensor_WaterLevel \
+sim:/testbench/teste/Start
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/testbench/teste/ClothesLevel \
+sim:/testbench/teste/Finish \
+sim:/testbench/teste/Sensor_WaterLevel \
+sim:/testbench/teste/Start
+quit -sim
