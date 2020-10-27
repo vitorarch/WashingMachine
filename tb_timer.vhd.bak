@@ -1,0 +1,68 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity tb_pseudo_mux is 
+end tb_pseudo_mux;
+
+architecture test of tb_pseudo_mux is
+	constant NumCycles   : integer := 5;
+	constant ClockPeriod : time    := 20 ns;
+	constant DutyCicle   : real    := 0.5;
+	constant Offset      : time    := 5 ns;
+
+	component pseudo_mux is
+		port (
+			CLOCK   : in    std_logic; -- clock input
+			RESET   : in    std_logic; -- reset input
+			S       : in    std_logic; -- control input
+			A,B,C,D : in    std_logic; -- data inputs
+			Q       : out   std_logic  -- data output
+		);
+	end component;
+	
+	signal clock, s, reset : std_logic := '0';
+	signal a, b, c, d      : std_logic := '0';
+	signal q               : std_logic;
+
+begin 
+	mux: pseudo_mux port map (clock, reset, s, a, b, c, d, q);
+	
+	process is
+	begin 
+		wait for Offset;
+		ClockLoop: loop 
+			clock <= '0';
+			wait for (ClockPeriod - (ClockPeriod * DutyCicle));
+			clock <= '1';
+			wait for (ClockPeriod * DutyCicle);
+		end loop ClockLoop;
+	end process;
+	
+	process is
+	begin
+		wait for (Offset/2);
+		a_loop: loop
+			a <= '1';
+			wait for 5 ns;
+			a <= '0';
+			wait for 5 ns;
+		end loop a_loop;
+	end process;
+	
+	b <= '1';
+	
+	process is
+	begin
+	wait for (Offset/3);
+		a_loop: loop
+			c <= '1';
+			wait for 1 ns;
+			c <= '0';
+			wait for 4 ns;
+		end loop a_loop;
+	end process;
+	
+	d <= '0';
+	
+	s <= '1' after 10 ns, '0' after 50 ns, '1' after 70 ns, '0' after 80 ns;
+end test;

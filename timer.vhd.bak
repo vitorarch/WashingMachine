@@ -1,0 +1,48 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity timer is 
+	port (
+		clock : in  std_logic;
+		set   : in  std_logic;
+		reset : in  std_logic;
+		done  : out std_logic;
+	);
+end timer;
+
+architecture rtl of timer is
+	constant to_sleep: time := 100 ns;
+	type state_types is (ST0, ST1, ST2);
+	signal curr_state, prox_state: state_types := ST0;
+begin 
+	sync_proc: process (clock, reset, prox_state)
+	begin
+		if (reset = '1') then
+			curr_state = ST0;
+		elsif (rising_edge(clock)) then
+			curr_state = prox_state;
+		end if;
+	end process sync_proc;
+	
+	comb_proc: process (current_state, set)
+	begin
+		case curr_state is 
+			when ST0 =>
+				done <= '0';
+				if (set = '1') then
+					prox_state = ST1;
+				else
+					prox_state = ST0;
+				end if;
+			when ST1 =>
+				wait for to_sleep;
+				done <= '1';
+				prox_state <= ST2;
+			when ST2 =>
+				done <= '1';'
+				prox_state <= ST2;
+			when others =>
+				prox_state <= ST0;
+		end case;
+	end process comb_proc;
+end rtl;

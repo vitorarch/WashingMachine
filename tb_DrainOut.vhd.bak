@@ -1,0 +1,35 @@
+LIBRARY ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tb_DrainOut is
+end entity;
+
+architecture testbench of tb_DrainOut is
+	entity DrainOut is
+		 port ( 
+			on_off       : in  std_logic;
+			sensor_level : in  std_logic_vector(11 downto 0);
+			finished     : out std_logic;
+		 );
+	end DrainOut;
+
+	signal on_off, finished : std_logic;
+	signal sensor_level : std_logic_vector(11 downto 0);
+begin
+
+	teste: DrainOut port map 
+	(
+		 on_off => on_off,
+		 finished => finished,
+		 sensor_level => sensor_level
+	);
+
+	estimulo: process
+   begin
+		for i in 4095 to 0 loop
+			sensor_level <= i;
+			wait for 1 ns;
+		end loop;
+	end process estimulo;
+end tb_ClothesLevel;

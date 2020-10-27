@@ -1,0 +1,47 @@
+|AddWater
+Enable => Finish.OUTPUTSELECT
+Sensor_WaterLevel[0] => LessThan0.IN24
+Sensor_WaterLevel[0] => LessThan1.IN24
+Sensor_WaterLevel[0] => LessThan2.IN24
+Sensor_WaterLevel[1] => LessThan0.IN23
+Sensor_WaterLevel[1] => LessThan1.IN23
+Sensor_WaterLevel[1] => LessThan2.IN23
+Sensor_WaterLevel[2] => LessThan0.IN22
+Sensor_WaterLevel[2] => LessThan1.IN22
+Sensor_WaterLevel[2] => LessThan2.IN22
+Sensor_WaterLevel[3] => LessThan0.IN21
+Sensor_WaterLevel[3] => LessThan1.IN21
+Sensor_WaterLevel[3] => LessThan2.IN21
+Sensor_WaterLevel[4] => LessThan0.IN20
+Sensor_WaterLevel[4] => LessThan1.IN20
+Sensor_WaterLevel[4] => LessThan2.IN20
+Sensor_WaterLevel[5] => LessThan0.IN19
+Sensor_WaterLevel[5] => LessThan1.IN19
+Sensor_WaterLevel[5] => LessThan2.IN19
+Sensor_WaterLevel[6] => LessThan0.IN18
+Sensor_WaterLevel[6] => LessThan1.IN18
+Sensor_WaterLevel[6] => LessThan2.IN18
+Sensor_WaterLevel[7] => LessThan0.IN17
+Sensor_WaterLevel[7] => LessThan1.IN17
+Sensor_WaterLevel[7] => LessThan2.IN17
+Sensor_WaterLevel[8] => LessThan0.IN16
+Sensor_WaterLevel[8] => LessThan1.IN16
+Sensor_WaterLevel[8] => LessThan2.IN16
+Sensor_WaterLevel[9] => LessThan0.IN15
+Sensor_WaterLevel[9] => LessThan1.IN15
+Sensor_WaterLevel[9] => LessThan2.IN15
+Sensor_WaterLevel[10] => LessThan0.IN14
+Sensor_WaterLevel[10] => LessThan1.IN14
+Sensor_WaterLevel[10] => LessThan2.IN14
+Sensor_WaterLevel[11] => LessThan0.IN13
+Sensor_WaterLevel[11] => LessThan1.IN13
+Sensor_WaterLevel[11] => LessThan2.IN13
+ClothesLevel[0] => Equal0.IN0
+ClothesLevel[0] => Equal1.IN1
+ClothesLevel[0] => Equal2.IN1
+ClothesLevel[1] => Equal0.IN1
+ClothesLevel[1] => Equal1.IN0
+ClothesLevel[1] => Equal2.IN0
+Finish <= Finish.DB_MAX_OUTPUT_PORT_TYPE
+
+

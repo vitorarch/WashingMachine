@@ -1,0 +1,24 @@
+architecture estrutural of ClothesLevel is
+
+variable average : std_logic_vector(11 downto 0);
+variable result : integer; 
+
+begin 
+
+process
+    begin
+
+    average := Sensor_distance01;
+    result := to_integer(signed(average));
+
+    if (result < 1365) then 
+        Level <= "11";
+    elsif (result < 2739) then 
+        Level <= "01";
+    else
+        Level <= "00";
+    end if;
+
+end process;
+
+end estrutural;

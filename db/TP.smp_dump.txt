@@ -1,0 +1,6 @@
+
+State Machine - |timer|curr_state
+Name curr_state.ST2 curr_state.ST1 curr_state.ST0 
+curr_state.ST0 0 0 0 
+curr_state.ST1 0 1 1 
+curr_state.ST2 1 0 1 
