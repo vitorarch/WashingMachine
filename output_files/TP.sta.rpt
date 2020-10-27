@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for TP
-Mon Oct 26 20:56:14 2020
+Mon Oct 26 23:03:55 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,23 +16,42 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Slow Model Recovery Summary
   9. Slow Model Removal Summary
  10. Slow Model Minimum Pulse Width Summary
- 11. Propagation Delay
- 12. Minimum Propagation Delay
- 13. Fast Model Setup Summary
- 14. Fast Model Hold Summary
- 15. Fast Model Recovery Summary
- 16. Fast Model Removal Summary
- 17. Fast Model Minimum Pulse Width Summary
- 18. Propagation Delay
- 19. Minimum Propagation Delay
- 20. Multicorner Timing Analysis Summary
- 21. Progagation Delay
- 22. Minimum Progagation Delay
- 23. Clock Transfers
- 24. Report TCCS
- 25. Report RSKM
- 26. Unconstrained Paths
- 27. TimeQuest Timing Analyzer Messages
+ 11. Slow Model Setup: 'button'
+ 12. Slow Model Setup: 'clock'
+ 13. Slow Model Hold: 'button'
+ 14. Slow Model Hold: 'clock'
+ 15. Slow Model Minimum Pulse Width: 'clock'
+ 16. Slow Model Minimum Pulse Width: 'button'
+ 17. Setup Times
+ 18. Hold Times
+ 19. Clock to Output Times
+ 20. Minimum Clock to Output Times
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'button'
+ 27. Fast Model Setup: 'clock'
+ 28. Fast Model Hold: 'button'
+ 29. Fast Model Hold: 'clock'
+ 30. Fast Model Minimum Pulse Width: 'clock'
+ 31. Fast Model Minimum Pulse Width: 'button'
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Multicorner Timing Analysis Summary
+ 37. Setup Times
+ 38. Hold Times
+ 39. Clock to Output Times
+ 40. Minimum Clock to Output Times
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
 
 
 
@@ -79,28 +98,44 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-----------
-; Clocks ;
-----------
-No clocks to report.
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; button     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { button } ;
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }  ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
 
 
----------------------------
-; Slow Model Fmax Summary ;
----------------------------
-No paths to report.
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 316.16 MHz ; 316.16 MHz      ; button     ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-----------------------------
-; Slow Model Setup Summary ;
-----------------------------
-No paths to report.
++---------------------------------+
+; Slow Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; button ; -2.163 ; -7.133        ;
+; clock  ; -1.392 ; -2.701        ;
++--------+--------+---------------+
 
 
----------------------------
-; Slow Model Hold Summary ;
----------------------------
-No paths to report.
++---------------------------------+
+; Slow Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; button ; -0.932 ; -3.402        ;
+; clock  ; 0.189  ; 0.000         ;
++--------+--------+---------------+
 
 
 -------------------------------
@@ -115,68 +150,360 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Slow Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; clock  ; -1.380 ; -6.380               ;
+; button ; -1.380 ; -1.380               ;
++--------+--------+----------------------+
 
 
-+-------------------------------------------------------------------------+
-; Propagation Delay                                                       ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; ClothesLevel[0]       ; Finish      ;        ; 11.486 ; 11.486 ;        ;
-; ClothesLevel[1]       ; Finish      ;        ; 11.191 ; 11.191 ;        ;
-; Enable                ; Finish      ; 11.348 ;        ;        ; 11.348 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 11.798 ;        ;        ; 11.798 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 11.844 ;        ;        ; 11.844 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 11.780 ;        ;        ; 11.780 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 11.596 ;        ;        ; 11.596 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 11.471 ;        ;        ; 11.471 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 11.747 ;        ;        ; 11.747 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 11.908 ;        ;        ; 11.908 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 9.043  ;        ;        ; 9.043  ;
-; Sensor_WaterLevel[8]  ; Finish      ; 11.741 ;        ;        ; 11.741 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 8.888  ;        ;        ; 8.888  ;
-; Sensor_WaterLevel[10] ; Finish      ; 11.765 ;        ;        ; 11.765 ;
-; Sensor_WaterLevel[11] ; Finish      ; 10.883 ;        ;        ; 10.883 ;
-+-----------------------+-------------+--------+--------+--------+--------+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'button'                                                                                             ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -2.163 ; prev_state.ST2_206 ; prox_state.ST2_255 ; button       ; button      ; 1.000        ; -0.342     ; 1.469      ;
+; -2.047 ; prev_state.ST1_216 ; prox_state.ST1_264 ; button       ; button      ; 1.000        ; -0.344     ; 1.361      ;
+; -1.883 ; prev_button        ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 0.616      ; 1.647      ;
+; -1.768 ; prev_button        ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.615      ; 1.541      ;
+; -1.754 ; curr_state.STP     ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 1.434      ; 2.336      ;
+; -1.676 ; curr_state.ST1     ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 0.616      ; 1.440      ;
+; -1.675 ; curr_state.ST1     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.615      ; 1.448      ;
+; -1.628 ; curr_state.STP     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 1.433      ; 2.219      ;
+; -1.414 ; prev_button        ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.616      ; 1.540      ;
+; -1.356 ; curr_state.ST0     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 1.433      ; 1.947      ;
+; -1.321 ; curr_state.ST1     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.616      ; 1.447      ;
+; -1.118 ; curr_state.ST2     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.616      ; 1.244      ;
+; -0.955 ; prev_button        ; prox_state.ST0_273 ; clock        ; button      ; 0.500        ; 0.619      ; 1.393      ;
+; -0.870 ; curr_state.STP     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 1.434      ; 1.814      ;
+; -0.602 ; curr_state.ST0     ; prox_state.ST0_273 ; clock        ; button      ; 0.500        ; 1.437      ; 1.858      ;
+; -0.292 ; curr_state.ST2     ; prev_state.ST1_216 ; clock        ; button      ; 0.500        ; 0.959      ; 0.880      ;
+; -0.262 ; curr_state.ST2     ; prev_state.ST2_206 ; clock        ; button      ; 0.500        ; 0.958      ; 0.875      ;
+; -0.135 ; button             ; prox_state.ST2_255 ; button       ; button      ; 0.500        ; 4.132      ; 3.415      ;
+; -0.021 ; button             ; prox_state.ST1_264 ; button       ; button      ; 0.500        ; 4.131      ; 3.310      ;
+; 0.333  ; button             ; prox_state.STP_237 ; button       ; button      ; 0.500        ; 4.132      ; 3.309      ;
+; 0.365  ; button             ; prox_state.ST2_255 ; button       ; button      ; 1.000        ; 4.132      ; 3.415      ;
+; 0.479  ; button             ; prox_state.ST1_264 ; button       ; button      ; 1.000        ; 4.131      ; 3.310      ;
+; 0.751  ; button             ; prox_state.ST0_273 ; button       ; button      ; 0.500        ; 4.135      ; 3.203      ;
+; 0.833  ; button             ; prox_state.STP_237 ; button       ; button      ; 1.000        ; 4.132      ; 3.309      ;
+; 1.251  ; button             ; prox_state.ST0_273 ; button       ; button      ; 1.000        ; 4.135      ; 3.203      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------+
-; Minimum Propagation Delay                                               ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; ClothesLevel[0]       ; Finish      ;        ; 10.422 ; 10.422 ;        ;
-; ClothesLevel[1]       ; Finish      ;        ; 10.557 ; 10.557 ;        ;
-; Enable                ; Finish      ; 10.538 ;        ;        ; 10.538 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 11.031 ;        ;        ; 11.031 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 10.933 ;        ;        ; 10.933 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 11.106 ;        ;        ; 11.106 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 10.157 ;        ;        ; 10.157 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 10.389 ;        ;        ; 10.389 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 10.783 ;        ;        ; 10.783 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 10.962 ;        ;        ; 10.962 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 7.962  ;        ;        ; 7.962  ;
-; Sensor_WaterLevel[8]  ; Finish      ; 11.072 ;        ;        ; 11.072 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 7.902  ;        ;        ; 7.902  ;
-; Sensor_WaterLevel[10] ; Finish      ; 10.995 ;        ;        ; 10.995 ;
-; Sensor_WaterLevel[11] ; Finish      ; 10.560 ;        ;        ; 10.560 ;
-+-----------------------+-------------+--------+--------+--------+--------+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                          ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; -1.392 ; prox_state.ST0_273 ; curr_state.ST0 ; button       ; clock       ; 0.500        ; -1.437     ; 0.491      ;
+; -0.982 ; prox_state.STP_237 ; curr_state.STP ; button       ; clock       ; 0.500        ; -1.434     ; 0.084      ;
+; -0.164 ; prox_state.ST2_255 ; curr_state.ST2 ; button       ; clock       ; 0.500        ; -0.616     ; 0.084      ;
+; -0.163 ; prox_state.ST1_264 ; curr_state.ST1 ; button       ; clock       ; 0.500        ; -0.615     ; 0.084      ;
+; 0.081  ; button             ; prev_button    ; button       ; clock       ; 0.500        ; 3.516      ; 3.971      ;
+; 0.581  ; button             ; prev_button    ; button       ; clock       ; 1.000        ; 3.516      ; 3.971      ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-----------------------------
-; Fast Model Setup Summary ;
-----------------------------
-No paths to report.
++------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'button'                                                                                              ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -0.932 ; button             ; prox_state.ST0_273 ; button       ; button      ; 0.000        ; 4.135      ; 3.203      ;
+; -0.826 ; button             ; prox_state.ST2_255 ; button       ; button      ; 0.000        ; 4.132      ; 3.306      ;
+; -0.823 ; button             ; prox_state.STP_237 ; button       ; button      ; 0.000        ; 4.132      ; 3.309      ;
+; -0.821 ; button             ; prox_state.ST1_264 ; button       ; button      ; 0.000        ; 4.131      ; 3.310      ;
+; -0.432 ; button             ; prox_state.ST0_273 ; button       ; button      ; -0.500       ; 4.135      ; 3.203      ;
+; -0.326 ; button             ; prox_state.ST2_255 ; button       ; button      ; -0.500       ; 4.132      ; 3.306      ;
+; -0.323 ; button             ; prox_state.STP_237 ; button       ; button      ; -0.500       ; 4.132      ; 3.309      ;
+; -0.321 ; button             ; prox_state.ST1_264 ; button       ; button      ; -0.500       ; 4.131      ; 3.310      ;
+; 0.417  ; curr_state.ST2     ; prev_state.ST2_206 ; clock        ; button      ; -0.500       ; 0.958      ; 0.875      ;
+; 0.421  ; curr_state.ST2     ; prev_state.ST1_216 ; clock        ; button      ; -0.500       ; 0.959      ; 0.880      ;
+; 0.880  ; curr_state.STP     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 1.434      ; 1.814      ;
+; 0.921  ; curr_state.ST0     ; prox_state.ST0_273 ; clock        ; button      ; -0.500       ; 1.437      ; 1.858      ;
+; 1.014  ; curr_state.ST0     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 1.433      ; 1.947      ;
+; 1.128  ; curr_state.ST2     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.616      ; 1.244      ;
+; 1.274  ; prev_button        ; prox_state.ST0_273 ; clock        ; button      ; -0.500       ; 0.619      ; 1.393      ;
+; 1.286  ; curr_state.STP     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 1.433      ; 2.219      ;
+; 1.324  ; curr_state.ST1     ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 0.616      ; 1.440      ;
+; 1.331  ; curr_state.ST1     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.616      ; 1.447      ;
+; 1.333  ; curr_state.ST1     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.615      ; 1.448      ;
+; 1.402  ; curr_state.STP     ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 1.434      ; 2.336      ;
+; 1.421  ; prev_button        ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 0.616      ; 1.537      ;
+; 1.424  ; prev_button        ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.616      ; 1.540      ;
+; 1.426  ; prev_button        ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.615      ; 1.541      ;
+; 1.705  ; prev_state.ST1_216 ; prox_state.ST1_264 ; button       ; button      ; 0.000        ; -0.344     ; 1.361      ;
+; 1.811  ; prev_state.ST2_206 ; prox_state.ST2_255 ; button       ; button      ; 0.000        ; -0.342     ; 1.469      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
 
 
----------------------------
-; Fast Model Hold Summary ;
----------------------------
-No paths to report.
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                          ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.189 ; button             ; prev_button    ; button       ; clock       ; 0.000        ; 3.516      ; 3.971      ;
+; 0.689 ; button             ; prev_button    ; button       ; clock       ; -0.500       ; 3.516      ; 3.971      ;
+; 0.933 ; prox_state.ST1_264 ; curr_state.ST1 ; button       ; clock       ; -0.500       ; -0.615     ; 0.084      ;
+; 0.934 ; prox_state.ST2_255 ; curr_state.ST2 ; button       ; clock       ; -0.500       ; -0.616     ; 0.084      ;
+; 1.752 ; prox_state.STP_237 ; curr_state.STP ; button       ; clock       ; -0.500       ; -1.434     ; 0.084      ;
+; 2.162 ; prox_state.ST0_273 ; curr_state.ST0 ; button       ; clock       ; -0.500       ; -1.437     ; 0.491      ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST0         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST0         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST1         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST1         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST2         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST2         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.STP         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.STP         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; prev_button            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; prev_button            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST0|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST0|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.STP|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.STP|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; prev_button|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; prev_button|clk        ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'button'                                                                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; button ; Rise       ; button                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0|datab           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0|datab           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; button|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; button|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prev_state.ST1_216          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prev_state.ST1_216          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prev_state.ST1_216|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prev_state.ST1_216|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prev_state.ST2_206          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prev_state.ST2_206          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prev_state.ST2_206|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prev_state.ST2_206|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST0_273          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST0_273          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST0_273|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST0_273|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST1_264          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST1_264          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST1_264|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST1_264|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST2_255          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST2_255          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST2_255|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST2_255|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.STP_237          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.STP_237          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.STP_237|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.STP_237|datac    ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; 36.735 ; 36.735 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; 36.735 ; 36.735 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; 36.413 ; 36.413 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; 36.354 ; 36.354 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; 36.295 ; 36.295 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; 36.445 ; 36.445 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; 35.835 ; 35.835 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; 35.778 ; 35.778 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; 36.387 ; 36.387 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; 35.843 ; 35.843 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; 35.490 ; 35.490 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; 35.477 ; 35.477 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; 35.057 ; 35.057 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; 36.927 ; 36.927 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; 36.927 ; 36.927 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; 36.674 ; 36.674 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; 36.310 ; 36.310 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; 36.479 ; 36.479 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; 36.028 ; 36.028 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; 36.115 ; 36.115 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; 35.781 ; 35.781 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; 36.165 ; 36.165 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; 35.625 ; 35.625 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; 35.520 ; 35.520 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; 35.480 ; 35.480 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; 35.409 ; 35.409 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; 34.708 ; 34.708 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; 34.499 ; 34.499 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; 34.534 ; 34.534 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; 34.708 ; 34.708 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; 34.331 ; 34.331 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; 34.226 ; 34.226 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; 34.678 ; 34.678 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; 34.325 ; 34.325 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; 34.230 ; 34.230 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; 34.105 ; 34.105 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; 34.073 ; 34.073 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; 33.974 ; 33.974 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; 33.907 ; 33.907 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; 8.986  ; 8.986  ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; 8.882  ; 8.882  ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; 8.948  ; 8.948  ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; 8.986  ; 8.986  ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; 8.855  ; 8.855  ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; 8.186  ; 8.186  ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; 8.291  ; 8.291  ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; 8.318  ; 8.318  ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; 7.383  ; 7.383  ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; 7.582  ; 7.582  ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; 7.275  ; 7.275  ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; 7.038  ; 7.038  ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; 3.206  ; 3.206  ; Fall       ; button          ;
+; button               ; button     ; 0.635  ; 0.635  ; Fall       ; button          ;
+; button               ; clock      ; 0.419  ; 0.419  ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; -7.302 ; -7.302 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; -8.723 ; -8.723 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; -8.398 ; -8.398 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; -8.342 ; -8.342 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; -8.278 ; -8.278 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; -8.433 ; -8.433 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; -7.823 ; -7.823 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; -7.766 ; -7.766 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; -8.370 ; -8.370 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; -8.049 ; -8.049 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; -7.696 ; -7.696 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; -7.683 ; -7.683 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; -7.302 ; -7.302 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; -7.654 ; -7.654 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; -8.915 ; -8.915 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; -8.660 ; -8.660 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; -8.298 ; -8.298 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; -8.461 ; -8.461 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; -8.016 ; -8.016 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; -8.103 ; -8.103 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; -7.769 ; -7.769 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; -8.149 ; -8.149 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; -7.831 ; -7.831 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; -7.726 ; -7.726 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; -7.686 ; -7.686 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; -7.654 ; -7.654 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; -6.464 ; -6.464 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; -7.056 ; -7.056 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; -7.091 ; -7.091 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; -7.265 ; -7.265 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; -6.888 ; -6.888 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; -6.783 ; -6.783 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; -7.235 ; -7.235 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; -6.882 ; -6.882 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; -6.787 ; -6.787 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; -6.662 ; -6.662 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; -6.630 ; -6.630 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; -6.531 ; -6.531 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; -6.464 ; -6.464 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; -0.022 ; -0.022 ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; -5.339 ; -5.339 ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; -5.230 ; -5.230 ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; -5.375 ; -5.375 ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; -5.144 ; -5.144 ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; -4.767 ; -4.767 ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; -5.046 ; -5.046 ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; -4.694 ; -4.694 ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; -3.943 ; -3.943 ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; -3.836 ; -3.836 ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; -3.970 ; -3.970 ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; -4.540 ; -4.540 ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; -0.022 ; -0.022 ; Fall       ; button          ;
+; button               ; button     ; 0.932  ; 0.932  ; Fall       ; button          ;
+; button               ; clock      ; -0.189 ; -0.189 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 7.874 ; 7.874 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 7.215 ; 7.215 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 7.193 ; 7.193 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 7.808 ; 7.808 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 7.215 ; 7.215 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 7.193 ; 7.193 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; button ; -0.585 ; -1.537        ;
+; clock  ; -0.260 ; -0.329        ;
++--------+--------+---------------+
+
+
++---------------------------------+
+; Fast Model Hold Summary         ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; button ; -0.672 ; -2.673        ;
+; clock  ; 0.035  ; 0.000         ;
++--------+--------+---------------+
 
 
 -------------------------------
@@ -191,118 +518,524 @@ No paths to report.
 No paths to report.
 
 
-------------------------------------------
++----------------------------------------+
 ; Fast Model Minimum Pulse Width Summary ;
-------------------------------------------
-No paths to report.
++--------+--------+----------------------+
+; Clock  ; Slack  ; End Point TNS        ;
++--------+--------+----------------------+
+; clock  ; -1.380 ; -6.380               ;
+; button ; -1.380 ; -1.380               ;
++--------+--------+----------------------+
 
 
-+---------------------------------------------------------------------+
-; Propagation Delay                                                   ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; Input Port            ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; ClothesLevel[0]       ; Finish      ;       ; 6.198 ; 6.198 ;       ;
-; ClothesLevel[1]       ; Finish      ;       ; 6.050 ; 6.050 ;       ;
-; Enable                ; Finish      ; 6.146 ;       ;       ; 6.146 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 6.321 ;       ;       ; 6.321 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 6.367 ;       ;       ; 6.367 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 6.332 ;       ;       ; 6.332 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 6.269 ;       ;       ; 6.269 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 6.169 ;       ;       ; 6.169 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 6.298 ;       ;       ; 6.298 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 6.385 ;       ;       ; 6.385 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 4.509 ;       ;       ; 4.509 ;
-; Sensor_WaterLevel[8]  ; Finish      ; 6.308 ;       ;       ; 6.308 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 4.411 ;       ;       ; 4.411 ;
-; Sensor_WaterLevel[10] ; Finish      ; 6.316 ;       ;       ; 6.316 ;
-; Sensor_WaterLevel[11] ; Finish      ; 5.944 ;       ;       ; 5.944 ;
-+-----------------------+-------------+-------+-------+-------+-------+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'button'                                                                                             ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -0.585 ; curr_state.STP     ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 0.559      ; 1.071      ;
+; -0.516 ; prev_button        ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 0.322      ; 0.765      ;
+; -0.508 ; curr_state.STP     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.556      ; 1.001      ;
+; -0.456 ; prev_button        ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.319      ; 0.712      ;
+; -0.412 ; curr_state.ST1     ; prox_state.ST2_255 ; clock        ; button      ; 0.500        ; 0.322      ; 0.661      ;
+; -0.412 ; curr_state.ST1     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.319      ; 0.668      ;
+; -0.396 ; curr_state.ST0     ; prox_state.ST1_264 ; clock        ; button      ; 0.500        ; 0.556      ; 0.889      ;
+; -0.382 ; prev_state.ST2_206 ; prox_state.ST2_255 ; button       ; button      ; 1.000        ; -0.152     ; 0.657      ;
+; -0.299 ; prev_state.ST1_216 ; prox_state.ST1_264 ; button       ; button      ; 1.000        ; -0.156     ; 0.580      ;
+; -0.298 ; prev_button        ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.322      ; 0.710      ;
+; -0.254 ; curr_state.ST1     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.322      ; 0.666      ;
+; -0.181 ; curr_state.STP     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.559      ; 0.830      ;
+; -0.178 ; curr_state.ST2     ; prox_state.STP_237 ; clock        ; button      ; 0.500        ; 0.322      ; 0.590      ;
+; -0.146 ; prev_button        ; prox_state.ST0_273 ; clock        ; button      ; 0.500        ; 0.321      ; 0.689      ;
+; -0.080 ; curr_state.ST0     ; prox_state.ST0_273 ; clock        ; button      ; 0.500        ; 0.558      ; 0.860      ;
+; 0.187  ; curr_state.ST2     ; prev_state.ST1_216 ; clock        ; button      ; 0.500        ; 0.475      ; 0.426      ;
+; 0.190  ; curr_state.ST2     ; prev_state.ST2_206 ; clock        ; button      ; 0.500        ; 0.474      ; 0.428      ;
+; 0.540  ; button             ; prox_state.ST2_255 ; button       ; button      ; 0.500        ; 2.230      ; 1.617      ;
+; 0.602  ; button             ; prox_state.ST1_264 ; button       ; button      ; 0.500        ; 2.227      ; 1.562      ;
+; 0.760  ; button             ; prox_state.STP_237 ; button       ; button      ; 0.500        ; 2.230      ; 1.560      ;
+; 0.888  ; button             ; prox_state.ST0_273 ; button       ; button      ; 0.500        ; 2.229      ; 1.563      ;
+; 1.040  ; button             ; prox_state.ST2_255 ; button       ; button      ; 1.000        ; 2.230      ; 1.617      ;
+; 1.102  ; button             ; prox_state.ST1_264 ; button       ; button      ; 1.000        ; 2.227      ; 1.562      ;
+; 1.260  ; button             ; prox_state.STP_237 ; button       ; button      ; 1.000        ; 2.230      ; 1.560      ;
+; 1.388  ; button             ; prox_state.ST0_273 ; button       ; button      ; 1.000        ; 2.229      ; 1.563      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------+
-; Minimum Propagation Delay                                           ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; Input Port            ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; ClothesLevel[0]       ; Finish      ;       ; 5.723 ; 5.723 ;       ;
-; ClothesLevel[1]       ; Finish      ;       ; 5.775 ; 5.775 ;       ;
-; Enable                ; Finish      ; 5.792 ;       ;       ; 5.792 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 5.988 ;       ;       ; 5.988 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 5.948 ;       ;       ; 5.948 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 6.020 ;       ;       ; 6.020 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 5.631 ;       ;       ; 5.631 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 5.712 ;       ;       ; 5.712 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 5.874 ;       ;       ; 5.874 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 5.984 ;       ;       ; 5.984 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 4.048 ;       ;       ; 4.048 ;
-; Sensor_WaterLevel[8]  ; Finish      ; 6.014 ;       ;       ; 6.014 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 3.981 ;       ;       ; 3.981 ;
-; Sensor_WaterLevel[10] ; Finish      ; 5.982 ;       ;       ; 5.982 ;
-; Sensor_WaterLevel[11] ; Finish      ; 5.811 ;       ;       ; 5.811 ;
-+-----------------------+-------------+-------+-------+-------+-------+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                          ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; -0.260 ; prox_state.ST0_273 ; curr_state.ST0 ; button       ; clock       ; 0.500        ; -0.558     ; 0.234      ;
+; -0.069 ; prox_state.STP_237 ; curr_state.STP ; button       ; clock       ; 0.500        ; -0.559     ; 0.042      ;
+; 0.168  ; prox_state.ST2_255 ; curr_state.ST2 ; button       ; clock       ; 0.500        ; -0.322     ; 0.042      ;
+; 0.171  ; prox_state.ST1_264 ; curr_state.ST1 ; button       ; clock       ; 0.500        ; -0.319     ; 0.042      ;
+; 0.345  ; button             ; prev_button    ; button       ; clock       ; 0.500        ; 1.908      ; 2.095      ;
+; 0.845  ; button             ; prev_button    ; button       ; clock       ; 1.000        ; 1.908      ; 2.095      ;
++--------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-+----------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                        ;
-+------------------+-------+------+----------+---------+---------------------+
-; Clock            ; Setup ; Hold ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------+-------+------+----------+---------+---------------------+
-; Worst-case Slack ; N/A   ; N/A  ; N/A      ; N/A     ; N/A                 ;
-; Design-wide TNS  ; 0.0   ; 0.0  ; 0.0      ; 0.0     ; 0.0                 ;
-+------------------+-------+------+----------+---------+---------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'button'                                                                                              ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -0.672 ; button             ; prox_state.ST2_255 ; button       ; button      ; 0.000        ; 2.230      ; 1.558      ;
+; -0.670 ; button             ; prox_state.STP_237 ; button       ; button      ; 0.000        ; 2.230      ; 1.560      ;
+; -0.666 ; button             ; prox_state.ST0_273 ; button       ; button      ; 0.000        ; 2.229      ; 1.563      ;
+; -0.665 ; button             ; prox_state.ST1_264 ; button       ; button      ; 0.000        ; 2.227      ; 1.562      ;
+; -0.172 ; button             ; prox_state.ST2_255 ; button       ; button      ; -0.500       ; 2.230      ; 1.558      ;
+; -0.170 ; button             ; prox_state.STP_237 ; button       ; button      ; -0.500       ; 2.230      ; 1.560      ;
+; -0.166 ; button             ; prox_state.ST0_273 ; button       ; button      ; -0.500       ; 2.229      ; 1.563      ;
+; -0.165 ; button             ; prox_state.ST1_264 ; button       ; button      ; -0.500       ; 2.227      ; 1.562      ;
+; 0.451  ; curr_state.ST2     ; prev_state.ST1_216 ; clock        ; button      ; -0.500       ; 0.475      ; 0.426      ;
+; 0.454  ; curr_state.ST2     ; prev_state.ST2_206 ; clock        ; button      ; -0.500       ; 0.474      ; 0.428      ;
+; 0.736  ; prev_state.ST1_216 ; prox_state.ST1_264 ; button       ; button      ; 0.000        ; -0.156     ; 0.580      ;
+; 0.768  ; curr_state.ST2     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.322      ; 0.590      ;
+; 0.771  ; curr_state.STP     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.559      ; 0.830      ;
+; 0.802  ; curr_state.ST0     ; prox_state.ST0_273 ; clock        ; button      ; -0.500       ; 0.558      ; 0.860      ;
+; 0.809  ; prev_state.ST2_206 ; prox_state.ST2_255 ; button       ; button      ; 0.000        ; -0.152     ; 0.657      ;
+; 0.833  ; curr_state.ST0     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.556      ; 0.889      ;
+; 0.839  ; curr_state.ST1     ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 0.322      ; 0.661      ;
+; 0.844  ; curr_state.ST1     ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.322      ; 0.666      ;
+; 0.849  ; curr_state.ST1     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.319      ; 0.668      ;
+; 0.868  ; prev_button        ; prox_state.ST0_273 ; clock        ; button      ; -0.500       ; 0.321      ; 0.689      ;
+; 0.886  ; prev_button        ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 0.322      ; 0.708      ;
+; 0.888  ; prev_button        ; prox_state.STP_237 ; clock        ; button      ; -0.500       ; 0.322      ; 0.710      ;
+; 0.893  ; prev_button        ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.319      ; 0.712      ;
+; 0.945  ; curr_state.STP     ; prox_state.ST1_264 ; clock        ; button      ; -0.500       ; 0.556      ; 1.001      ;
+; 1.012  ; curr_state.STP     ; prox_state.ST2_255 ; clock        ; button      ; -0.500       ; 0.559      ; 1.071      ;
++--------+--------------------+--------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-------------------------------------------------------------------------+
-; Progagation Delay                                                       ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; Input Port            ; Output Port ; RR     ; RF     ; FR     ; FF     ;
-+-----------------------+-------------+--------+--------+--------+--------+
-; ClothesLevel[0]       ; Finish      ;        ; 11.486 ; 11.486 ;        ;
-; ClothesLevel[1]       ; Finish      ;        ; 11.191 ; 11.191 ;        ;
-; Enable                ; Finish      ; 11.348 ;        ;        ; 11.348 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 11.798 ;        ;        ; 11.798 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 11.844 ;        ;        ; 11.844 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 11.780 ;        ;        ; 11.780 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 11.596 ;        ;        ; 11.596 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 11.471 ;        ;        ; 11.471 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 11.747 ;        ;        ; 11.747 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 11.908 ;        ;        ; 11.908 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 9.043  ;        ;        ; 9.043  ;
-; Sensor_WaterLevel[8]  ; Finish      ; 11.741 ;        ;        ; 11.741 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 8.888  ;        ;        ; 8.888  ;
-; Sensor_WaterLevel[10] ; Finish      ; 11.765 ;        ;        ; 11.765 ;
-; Sensor_WaterLevel[11] ; Finish      ; 10.883 ;        ;        ; 10.883 ;
-+-----------------------+-------------+--------+--------+--------+--------+
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                          ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node        ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
+; 0.035 ; button             ; prev_button    ; button       ; clock       ; 0.000        ; 1.908      ; 2.095      ;
+; 0.535 ; button             ; prev_button    ; button       ; clock       ; -0.500       ; 1.908      ; 2.095      ;
+; 0.709 ; prox_state.ST1_264 ; curr_state.ST1 ; button       ; clock       ; -0.500       ; -0.319     ; 0.042      ;
+; 0.712 ; prox_state.ST2_255 ; curr_state.ST2 ; button       ; clock       ; -0.500       ; -0.322     ; 0.042      ;
+; 0.949 ; prox_state.STP_237 ; curr_state.STP ; button       ; clock       ; -0.500       ; -0.559     ; 0.042      ;
+; 1.140 ; prox_state.ST0_273 ; curr_state.ST0 ; button       ; clock       ; -0.500       ; -0.558     ; 0.234      ;
++-------+--------------------+----------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------+
-; Minimum Progagation Delay                                           ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; Input Port            ; Output Port ; RR    ; RF    ; FR    ; FF    ;
-+-----------------------+-------------+-------+-------+-------+-------+
-; ClothesLevel[0]       ; Finish      ;       ; 5.723 ; 5.723 ;       ;
-; ClothesLevel[1]       ; Finish      ;       ; 5.775 ; 5.775 ;       ;
-; Enable                ; Finish      ; 5.792 ;       ;       ; 5.792 ;
-; Sensor_WaterLevel[0]  ; Finish      ; 5.988 ;       ;       ; 5.988 ;
-; Sensor_WaterLevel[1]  ; Finish      ; 5.948 ;       ;       ; 5.948 ;
-; Sensor_WaterLevel[2]  ; Finish      ; 6.020 ;       ;       ; 6.020 ;
-; Sensor_WaterLevel[3]  ; Finish      ; 5.631 ;       ;       ; 5.631 ;
-; Sensor_WaterLevel[4]  ; Finish      ; 5.712 ;       ;       ; 5.712 ;
-; Sensor_WaterLevel[5]  ; Finish      ; 5.874 ;       ;       ; 5.874 ;
-; Sensor_WaterLevel[6]  ; Finish      ; 5.984 ;       ;       ; 5.984 ;
-; Sensor_WaterLevel[7]  ; Finish      ; 4.048 ;       ;       ; 4.048 ;
-; Sensor_WaterLevel[8]  ; Finish      ; 6.014 ;       ;       ; 6.014 ;
-; Sensor_WaterLevel[9]  ; Finish      ; 3.981 ;       ;       ; 3.981 ;
-; Sensor_WaterLevel[10] ; Finish      ; 5.982 ;       ;       ; 5.982 ;
-; Sensor_WaterLevel[11] ; Finish      ; 5.811 ;       ;       ; 5.811 ;
-+-----------------------+-------------+-------+-------+-------+-------+
++---------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                 ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST0         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST0         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST1         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST1         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST2         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST2         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; curr_state.STP         ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.STP         ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Rise       ; prev_button            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Rise       ; prev_button            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock|combout          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; clock~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST0|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST0|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST1|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.ST2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.ST2|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; curr_state.STP|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; curr_state.STP|clk     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clock ; Rise       ; prev_button|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clock ; Rise       ; prev_button|clk        ;
++--------+--------------+----------------+------------------+-------+------------+------------------------+
 
 
--------------------
-; Clock Transfers ;
--------------------
-Nothing to report.
++---------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'button'                                                                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                      ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; button ; Rise       ; button                      ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector1~0|datab           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector1~0|datab           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0clkctrl|inclk[0] ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0|combout         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; Selector5~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; Selector5~0|datad           ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; button|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; button|combout              ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prev_state.ST1_216          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prev_state.ST1_216          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prev_state.ST1_216|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prev_state.ST1_216|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prev_state.ST2_206          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prev_state.ST2_206          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prev_state.ST2_206|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prev_state.ST2_206|datad    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST0_273          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST0_273          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST0_273|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST0_273|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST1_264          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST1_264          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST1_264|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST1_264|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.ST2_255          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.ST2_255          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.ST2_255|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.ST2_255|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Fall       ; prox_state.STP_237          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Fall       ; prox_state.STP_237          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; button ; Rise       ; prox_state.STP_237|datac    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; button ; Rise       ; prox_state.STP_237|datac    ;
++--------+--------------+----------------+------------------+--------+------------+-----------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; 15.975 ; 15.975 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; 15.975 ; 15.975 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; 15.838 ; 15.838 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; 15.793 ; 15.793 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; 15.760 ; 15.760 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; 15.837 ; 15.837 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; 15.540 ; 15.540 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; 15.504 ; 15.504 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; 15.792 ; 15.792 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; 15.541 ; 15.541 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; 15.351 ; 15.351 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; 15.368 ; 15.368 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; 15.155 ; 15.155 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; 16.060 ; 16.060 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; 16.060 ; 16.060 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; 15.948 ; 15.948 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; 15.773 ; 15.773 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; 15.848 ; 15.848 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; 15.641 ; 15.641 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; 15.671 ; 15.671 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; 15.511 ; 15.511 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; 15.679 ; 15.679 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; 15.431 ; 15.431 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; 15.373 ; 15.373 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; 15.355 ; 15.355 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; 15.337 ; 15.337 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; 15.120 ; 15.120 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; 15.003 ; 15.003 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; 15.033 ; 15.033 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; 15.120 ; 15.120 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; 14.940 ; 14.940 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; 14.890 ; 14.890 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; 15.086 ; 15.086 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; 14.915 ; 14.915 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; 14.855 ; 14.855 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; 14.795 ; 14.795 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; 14.778 ; 14.778 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; 14.735 ; 14.735 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; 14.708 ; 14.708 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; 4.286  ; 4.286  ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; 4.247  ; 4.247  ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; 4.270  ; 4.270  ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; 4.286  ; 4.286  ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; 4.230  ; 4.230  ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; 3.942  ; 3.942  ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; 3.979  ; 3.979  ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; 4.013  ; 4.013  ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; 3.604  ; 3.604  ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; 3.673  ; 3.673  ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; 3.544  ; 3.544  ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; 3.445  ; 3.445  ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; 1.090  ; 1.090  ; Fall       ; button          ;
+; button               ; button     ; -0.040 ; -0.040 ; Fall       ; button          ;
+; button               ; clock      ; 0.155  ; 0.155  ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; -3.521 ; -3.521 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; -4.232 ; -4.232 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; -4.095 ; -4.095 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; -4.050 ; -4.050 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; -4.014 ; -4.014 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; -4.094 ; -4.094 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; -3.797 ; -3.797 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; -3.761 ; -3.761 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; -4.048 ; -4.048 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; -3.892 ; -3.892 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; -3.702 ; -3.702 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; -3.719 ; -3.719 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; -3.521 ; -3.521 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; -3.703 ; -3.703 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; -4.317 ; -4.317 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; -4.204 ; -4.204 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; -4.030 ; -4.030 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; -4.104 ; -4.104 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; -3.898 ; -3.898 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; -3.928 ; -3.928 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; -3.768 ; -3.768 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; -3.933 ; -3.933 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; -3.782 ; -3.782 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; -3.724 ; -3.724 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; -3.706 ; -3.706 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; -3.703 ; -3.703 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; -3.177 ; -3.177 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; -3.472 ; -3.472 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; -3.502 ; -3.502 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; -3.589 ; -3.589 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; -3.409 ; -3.409 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; -3.359 ; -3.359 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; -3.555 ; -3.555 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; -3.384 ; -3.384 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; -3.324 ; -3.324 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; -3.264 ; -3.264 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; -3.247 ; -3.247 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; -3.204 ; -3.204 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; -3.177 ; -3.177 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; 0.279  ; 0.279  ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; -2.720 ; -2.720 ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; -2.690 ; -2.690 ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; -2.735 ; -2.735 ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; -2.655 ; -2.655 ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; -2.474 ; -2.474 ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; -2.589 ; -2.589 ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; -2.457 ; -2.457 ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; -2.119 ; -2.119 ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; -2.060 ; -2.060 ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; -2.117 ; -2.117 ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; -2.357 ; -2.357 ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; 0.279  ; 0.279  ; Fall       ; button          ;
+; button               ; button     ; 0.672  ; 0.672  ; Fall       ; button          ;
+; button               ; clock      ; -0.035 ; -0.035 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 4.213 ; 4.213 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 3.906 ; 3.906 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 3.889 ; 3.889 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 4.172 ; 4.172 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 3.906 ; 3.906 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 3.889 ; 3.889 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+--------+--------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+--------+----------+---------+---------------------+
+; Worst-case Slack ; -2.163 ; -0.932 ; N/A      ; N/A     ; -1.380              ;
+;  button          ; -2.163 ; -0.932 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -1.392 ; 0.035  ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -9.834 ; -3.402 ; 0.0      ; 0.0     ; -7.76               ;
+;  button          ; -7.133 ; -3.402 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -2.701 ; 0.000  ; N/A      ; N/A     ; -6.380              ;
++------------------+--------+--------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------+
+; Setup Times                                                                        ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; 36.735 ; 36.735 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; 36.735 ; 36.735 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; 36.413 ; 36.413 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; 36.354 ; 36.354 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; 36.295 ; 36.295 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; 36.445 ; 36.445 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; 35.835 ; 35.835 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; 35.778 ; 35.778 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; 36.387 ; 36.387 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; 35.843 ; 35.843 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; 35.490 ; 35.490 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; 35.477 ; 35.477 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; 35.057 ; 35.057 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; 36.927 ; 36.927 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; 36.927 ; 36.927 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; 36.674 ; 36.674 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; 36.310 ; 36.310 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; 36.479 ; 36.479 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; 36.028 ; 36.028 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; 36.115 ; 36.115 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; 35.781 ; 35.781 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; 36.165 ; 36.165 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; 35.625 ; 35.625 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; 35.520 ; 35.520 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; 35.480 ; 35.480 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; 35.409 ; 35.409 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; 34.708 ; 34.708 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; 34.499 ; 34.499 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; 34.534 ; 34.534 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; 34.708 ; 34.708 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; 34.331 ; 34.331 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; 34.226 ; 34.226 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; 34.678 ; 34.678 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; 34.325 ; 34.325 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; 34.230 ; 34.230 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; 34.105 ; 34.105 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; 34.073 ; 34.073 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; 33.974 ; 33.974 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; 33.907 ; 33.907 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; 8.986  ; 8.986  ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; 8.882  ; 8.882  ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; 8.948  ; 8.948  ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; 8.986  ; 8.986  ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; 8.855  ; 8.855  ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; 8.186  ; 8.186  ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; 8.291  ; 8.291  ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; 8.318  ; 8.318  ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; 7.383  ; 7.383  ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; 7.582  ; 7.582  ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; 7.275  ; 7.275  ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; 7.038  ; 7.038  ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; 3.206  ; 3.206  ; Fall       ; button          ;
+; button               ; button     ; 0.635  ; 0.635  ; Fall       ; button          ;
+; button               ; clock      ; 0.419  ; 0.419  ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++------------------------------------------------------------------------------------+
+; Hold Times                                                                         ;
++----------------------+------------+--------+--------+------------+-----------------+
+; Data Port            ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------------+------------+--------+--------+------------+-----------------+
+; DistanceSensor1[*]   ; button     ; -3.521 ; -3.521 ; Fall       ; button          ;
+;  DistanceSensor1[0]  ; button     ; -4.232 ; -4.232 ; Fall       ; button          ;
+;  DistanceSensor1[1]  ; button     ; -4.095 ; -4.095 ; Fall       ; button          ;
+;  DistanceSensor1[2]  ; button     ; -4.050 ; -4.050 ; Fall       ; button          ;
+;  DistanceSensor1[3]  ; button     ; -4.014 ; -4.014 ; Fall       ; button          ;
+;  DistanceSensor1[4]  ; button     ; -4.094 ; -4.094 ; Fall       ; button          ;
+;  DistanceSensor1[5]  ; button     ; -3.797 ; -3.797 ; Fall       ; button          ;
+;  DistanceSensor1[6]  ; button     ; -3.761 ; -3.761 ; Fall       ; button          ;
+;  DistanceSensor1[7]  ; button     ; -4.048 ; -4.048 ; Fall       ; button          ;
+;  DistanceSensor1[8]  ; button     ; -3.892 ; -3.892 ; Fall       ; button          ;
+;  DistanceSensor1[9]  ; button     ; -3.702 ; -3.702 ; Fall       ; button          ;
+;  DistanceSensor1[10] ; button     ; -3.719 ; -3.719 ; Fall       ; button          ;
+;  DistanceSensor1[11] ; button     ; -3.521 ; -3.521 ; Fall       ; button          ;
+; DistanceSensor2[*]   ; button     ; -3.703 ; -3.703 ; Fall       ; button          ;
+;  DistanceSensor2[0]  ; button     ; -4.317 ; -4.317 ; Fall       ; button          ;
+;  DistanceSensor2[1]  ; button     ; -4.204 ; -4.204 ; Fall       ; button          ;
+;  DistanceSensor2[2]  ; button     ; -4.030 ; -4.030 ; Fall       ; button          ;
+;  DistanceSensor2[3]  ; button     ; -4.104 ; -4.104 ; Fall       ; button          ;
+;  DistanceSensor2[4]  ; button     ; -3.898 ; -3.898 ; Fall       ; button          ;
+;  DistanceSensor2[5]  ; button     ; -3.928 ; -3.928 ; Fall       ; button          ;
+;  DistanceSensor2[6]  ; button     ; -3.768 ; -3.768 ; Fall       ; button          ;
+;  DistanceSensor2[7]  ; button     ; -3.933 ; -3.933 ; Fall       ; button          ;
+;  DistanceSensor2[8]  ; button     ; -3.782 ; -3.782 ; Fall       ; button          ;
+;  DistanceSensor2[9]  ; button     ; -3.724 ; -3.724 ; Fall       ; button          ;
+;  DistanceSensor2[10] ; button     ; -3.706 ; -3.706 ; Fall       ; button          ;
+;  DistanceSensor2[11] ; button     ; -3.703 ; -3.703 ; Fall       ; button          ;
+; DistanceSensor3[*]   ; button     ; -3.177 ; -3.177 ; Fall       ; button          ;
+;  DistanceSensor3[0]  ; button     ; -3.472 ; -3.472 ; Fall       ; button          ;
+;  DistanceSensor3[1]  ; button     ; -3.502 ; -3.502 ; Fall       ; button          ;
+;  DistanceSensor3[2]  ; button     ; -3.589 ; -3.589 ; Fall       ; button          ;
+;  DistanceSensor3[3]  ; button     ; -3.409 ; -3.409 ; Fall       ; button          ;
+;  DistanceSensor3[4]  ; button     ; -3.359 ; -3.359 ; Fall       ; button          ;
+;  DistanceSensor3[5]  ; button     ; -3.555 ; -3.555 ; Fall       ; button          ;
+;  DistanceSensor3[6]  ; button     ; -3.384 ; -3.384 ; Fall       ; button          ;
+;  DistanceSensor3[7]  ; button     ; -3.324 ; -3.324 ; Fall       ; button          ;
+;  DistanceSensor3[8]  ; button     ; -3.264 ; -3.264 ; Fall       ; button          ;
+;  DistanceSensor3[9]  ; button     ; -3.247 ; -3.247 ; Fall       ; button          ;
+;  DistanceSensor3[10] ; button     ; -3.204 ; -3.204 ; Fall       ; button          ;
+;  DistanceSensor3[11] ; button     ; -3.177 ; -3.177 ; Fall       ; button          ;
+; WaterSensor[*]       ; button     ; 0.279  ; 0.279  ; Fall       ; button          ;
+;  WaterSensor[0]      ; button     ; -2.720 ; -2.720 ; Fall       ; button          ;
+;  WaterSensor[1]      ; button     ; -2.690 ; -2.690 ; Fall       ; button          ;
+;  WaterSensor[2]      ; button     ; -2.735 ; -2.735 ; Fall       ; button          ;
+;  WaterSensor[3]      ; button     ; -2.655 ; -2.655 ; Fall       ; button          ;
+;  WaterSensor[4]      ; button     ; -2.474 ; -2.474 ; Fall       ; button          ;
+;  WaterSensor[5]      ; button     ; -2.589 ; -2.589 ; Fall       ; button          ;
+;  WaterSensor[6]      ; button     ; -2.457 ; -2.457 ; Fall       ; button          ;
+;  WaterSensor[7]      ; button     ; -2.119 ; -2.119 ; Fall       ; button          ;
+;  WaterSensor[8]      ; button     ; -2.060 ; -2.060 ; Fall       ; button          ;
+;  WaterSensor[9]      ; button     ; -2.117 ; -2.117 ; Fall       ; button          ;
+;  WaterSensor[10]     ; button     ; -2.357 ; -2.357 ; Fall       ; button          ;
+;  WaterSensor[11]     ; button     ; 0.279  ; 0.279  ; Fall       ; button          ;
+; button               ; button     ; 0.932  ; 0.932  ; Fall       ; button          ;
+; button               ; clock      ; -0.035 ; -0.035 ; Rise       ; clock           ;
++----------------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 7.874 ; 7.874 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 7.215 ; 7.215 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 7.193 ; 7.193 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-----------------+------------+-------+-------+------------+-----------------+
+; Data Port       ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------+------------+-------+-------+------------+-----------------+
+; lockDoor        ; clock      ; 4.172 ; 4.172 ; Rise       ; clock           ;
+; releaseSoap     ; clock      ; 3.906 ; 3.906 ; Rise       ; clock           ;
+; turnOnWaterPump ; clock      ; 3.889 ; 3.889 ; Rise       ; clock           ;
++-----------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; button     ; button   ; 0        ; 0        ; 5        ; 7        ;
+; clock      ; button   ; 0        ; 0        ; 16       ; 0        ;
+; button     ; clock    ; 1        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; button     ; button   ; 0        ; 0        ; 5        ; 7        ;
+; clock      ; button   ; 0        ; 0        ; 16       ; 0        ;
+; button     ; clock    ; 1        ; 5        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
 ---------------
@@ -324,10 +1057,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 15    ; 15   ;
-; Unconstrained Input Port Paths  ; 15    ; 15   ;
-; Unconstrained Output Ports      ; 1     ; 1    ;
-; Unconstrained Output Port Paths ; 15    ; 15   ;
+; Unconstrained Input Ports       ; 48    ; 48   ;
+; Unconstrained Input Port Paths  ; 96    ; 96   ;
+; Unconstrained Output Ports      ; 3     ; 3    ;
+; Unconstrained Output Port Paths ; 4     ; 4    ;
 +---------------------------------+-------+------+
 
 
@@ -337,42 +1070,65 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 26 20:56:13 2020
+    Info: Processing started: Mon Oct 26 23:03:54 2020
 Info: Command: quartus_sta TP -c TP
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Warning (335093): TimeQuest Timing Analyzer is analyzing 6 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'TP.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name button button
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332159): No clocks to report
 Info: Analyzing Slow Model
-Info (332140): No fmax paths to report
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -2.163
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.163        -7.133 button 
+    Info (332119):    -1.392        -2.701 clock 
+Info (332146): Worst-case hold slack is -0.932
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.932        -3.402 button 
+    Info (332119):     0.189         0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -6.380 clock 
+    Info (332119):    -1.380        -1.380 button 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
-Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
-Warning (332068): No clocks defined in design.
-Info (332140): No Setup paths to report
-Info (332140): No Hold paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -0.585
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.585        -1.537 button 
+    Info (332119):    -0.260        -0.329 clock 
+Info (332146): Worst-case hold slack is -0.672
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.672        -2.673 button 
+    Info (332119):     0.035         0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332140): No Minimum Pulse Width paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380        -6.380 clock 
+    Info (332119):    -1.380        -1.380 button 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4544 megabytes
-    Info: Processing ended: Mon Oct 26 20:56:14 2020
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4548 megabytes
+    Info: Processing ended: Mon Oct 26 23:03:55 2020
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

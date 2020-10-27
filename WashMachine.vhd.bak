@@ -1,0 +1,46 @@
+library ieee;
+use ieee.std_logic_1164.all;
+USE ieee.numeric_std.all;
+
+entity WashMachine is
+	port (
+		clock           : in  std_logic;
+		DistanceSensor1 : in  std_logic_vector(11 downto 0);
+		DistanceSensor2 : in  std_logic_vector(11 downto 0);
+		DistanceSensor3 : in  std_logic_vector(11 downto 0);
+		LevelSensor     : in  std_logic_vector(11 downto 0);
+		button          : in  std_logic;
+		lockDoor        : out std_logic;
+		releaseSoap     : out std_logic;
+		turnOnMotor     : out std_logic;
+		turnOnWaterPump : out std_logic;
+		openValve       : out std_logic
+	);
+end entity;
+
+architecture rtl of WashMachine
+	type state_types is (ST0, ST1, ST2, ST3, STP);
+	signal prev_state, curr_state, prox_state: state_types := ST0;
+	signal prev_button: std_logic := '0';
+begin
+	sync_proc: process (clock, prox_state)
+	begin
+		if (rising_edge(clock)) then
+			prev_state <= curr_state;
+			curr_state <= prox_state;
+		end if;
+		prev_button <= button;
+	end process;
+	
+	comb_proc: process (curr_state, button, prev_button, prev_state)
+	begin
+		case curr_state is
+			when ST0 => 
+				if (button = '1') then
+					prox_state <= ST1;
+				else 
+					prox_state <= ST0;
+				end if;
+		end case;
+	end process;
+end rtl;

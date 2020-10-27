@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TP
-Mon Oct 26 20:56:06 2020
+Mon Oct 26 23:03:45 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,9 +13,14 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Elapsed Time Per Partition
- 10. Analysis & Synthesis Messages
+  8. State Machine - |WashMachine|curr_state
+  9. User-Specified and Inferred Latches
+ 10. Registers Removed During Synthesis
+ 11. General Register Statistics
+ 12. Parameter Settings for Inferred Entity Instance: ClothesLevel:CL1|lpm_divide:Div0
+ 13. Port Connectivity Checks: "AddWater:AW1"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -41,16 +46,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Oct 26 20:56:06 2020           ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 26 23:03:45 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; TP                                              ;
-; Top-level Entity Name              ; AddWater                                        ;
+; Top-level Entity Name              ; WashMachine                                     ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 16                                              ;
-;     Total combinational functions  ; 16                                              ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 16                                              ;
+; Total logic elements               ; 164                                             ;
+;     Total combinational functions  ; 163                                             ;
+;     Dedicated logic registers      ; 5                                               ;
+; Total registers                    ; 5                                               ;
+; Total pins                         ; 55                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +69,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP2C35F672C6       ;                    ;
-; Top-level entity name                                                      ; AddWater           ; TP                 ;
+; Top-level entity name                                                      ; WashMachine        ; TP                 ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -154,53 +159,111 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                              ;
-+----------------------------------+-----------------+-----------------+------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path       ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------+---------+
-; AddWater.vhd                     ; yes             ; User VHDL File  ; D:/altera/Projetos/TP/AddWater.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; ClothesLevel.vhd                 ; yes             ; User VHDL File               ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/ClothesLevel.vhd           ;         ;
+; AddWater.vhd                     ; yes             ; User VHDL File               ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/AddWater.vhd               ;         ;
+; WashMachine.vhd                  ; yes             ; User VHDL File               ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd            ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_divide.tdf                   ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/abs_divider.inc                  ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sign_div_unsign.inc              ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                 ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                   ;         ;
+; db/lpm_divide_cem.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/db/lpm_divide_cem.tdf      ;         ;
+; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/db/sign_div_unsign_mlh.tdf ;         ;
+; db/alt_u_div_e2f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/db/alt_u_div_e2f.tdf       ;         ;
+; db/add_sub_lkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/db/add_sub_lkc.tdf         ;         ;
+; db/add_sub_mkc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/db/add_sub_mkc.tdf         ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                        ;
-+---------------------------------------------+----------------------+
-; Resource                                    ; Usage                ;
-+---------------------------------------------+----------------------+
-; Estimated Total logic elements              ; 16                   ;
-;                                             ;                      ;
-; Total combinational functions               ; 16                   ;
-; Logic element usage by number of LUT inputs ;                      ;
-;     -- 4 input functions                    ; 12                   ;
-;     -- 3 input functions                    ; 3                    ;
-;     -- <=2 input functions                  ; 1                    ;
-;                                             ;                      ;
-; Logic elements by mode                      ;                      ;
-;     -- normal mode                          ; 16                   ;
-;     -- arithmetic mode                      ; 0                    ;
-;                                             ;                      ;
-; Total registers                             ; 0                    ;
-;     -- Dedicated logic registers            ; 0                    ;
-;     -- I/O registers                        ; 0                    ;
-;                                             ;                      ;
-; I/O pins                                    ; 16                   ;
-; Embedded Multiplier 9-bit elements          ; 0                    ;
-; Maximum fan-out node                        ; Sensor_WaterLevel[7] ;
-; Maximum fan-out                             ; 4                    ;
-; Total fan-out                               ; 60                   ;
-; Average fan-out                             ; 1.88                 ;
-+---------------------------------------------+----------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                                                           ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                                                   ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 164                                                                                                                     ;
+;                                             ;                                                                                                                         ;
+; Total combinational functions               ; 163                                                                                                                     ;
+; Logic element usage by number of LUT inputs ;                                                                                                                         ;
+;     -- 4 input functions                    ; 35                                                                                                                      ;
+;     -- 3 input functions                    ; 62                                                                                                                      ;
+;     -- <=2 input functions                  ; 66                                                                                                                      ;
+;                                             ;                                                                                                                         ;
+; Logic elements by mode                      ;                                                                                                                         ;
+;     -- normal mode                          ; 103                                                                                                                     ;
+;     -- arithmetic mode                      ; 60                                                                                                                      ;
+;                                             ;                                                                                                                         ;
+; Total registers                             ; 5                                                                                                                       ;
+;     -- Dedicated logic registers            ; 5                                                                                                                       ;
+;     -- I/O registers                        ; 0                                                                                                                       ;
+;                                             ;                                                                                                                         ;
+; I/O pins                                    ; 55                                                                                                                      ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                                                       ;
+; Maximum fan-out node                        ; ClothesLevel:CL1|lpm_divide:Div0|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_e2f:divider|op_7~6 ;
+; Maximum fan-out                             ; 9                                                                                                                       ;
+; Total fan-out                               ; 442                                                                                                                     ;
+; Average fan-out                             ; 1.98                                                                                                                    ;
++---------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |AddWater                  ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |AddWater           ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                 ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |WashMachine                              ; 163 (17)          ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 55   ; 0            ; |WashMachine                                                                                                                                        ; work         ;
+;    |AddWater:AW1|                         ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|AddWater:AW1                                                                                                                           ; work         ;
+;    |ClothesLevel:CL1|                     ; 130 (37)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1                                                                                                                       ; work         ;
+;       |lpm_divide:Div0|                   ; 93 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1|lpm_divide:Div0                                                                                                       ; work         ;
+;          |lpm_divide_cem:auto_generated|  ; 93 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1|lpm_divide:Div0|lpm_divide_cem:auto_generated                                                                         ; work         ;
+;             |sign_div_unsign_mlh:divider| ; 93 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1|lpm_divide:Div0|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider                                             ; work         ;
+;                |alt_u_div_e2f:divider|    ; 93 (92)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1|lpm_divide:Div0|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_e2f:divider                       ; work         ;
+;                   |add_sub_mkc:add_sub_1| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |WashMachine|ClothesLevel:CL1|lpm_divide:Div0|lpm_divide_cem:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_e2f:divider|add_sub_mkc:add_sub_1 ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------+
+; State Machine - |WashMachine|curr_state                                                             ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; Name           ; curr_state.STP ; curr_state.ST3 ; curr_state.ST2 ; curr_state.ST1 ; curr_state.ST0 ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+; curr_state.ST0 ; 0              ; 0              ; 0              ; 0              ; 0              ;
+; curr_state.ST1 ; 0              ; 0              ; 0              ; 1              ; 1              ;
+; curr_state.ST2 ; 0              ; 0              ; 1              ; 0              ; 1              ;
+; curr_state.ST3 ; 0              ; 1              ; 0              ; 0              ; 1              ;
+; curr_state.STP ; 1              ; 0              ; 0              ; 0              ; 1              ;
++----------------+----------------+----------------+----------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; prox_state.ST1_264                                 ; Selector5           ; yes                    ;
+; prox_state.ST2_255                                 ; Selector5           ; yes                    ;
+; prev_state.ST1_216                                 ; Selector1           ; yes                    ;
+; prev_state.ST2_206                                 ; Selector1           ; yes                    ;
+; prox_state.STP_237                                 ; Selector5           ; yes                    ;
+; prox_state.ST0_273                                 ; Selector5           ; yes                    ;
+; Number of user-specified and inferred latches = 6  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; curr_state.ST3                        ; Lost fanout        ;
+; Total Number of Removed Registers = 1 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -208,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 5     ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -216,6 +279,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: ClothesLevel:CL1|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------+
+; Parameter Name         ; Value          ; Type                                    ;
++------------------------+----------------+-----------------------------------------+
+; LPM_WIDTHN             ; 14             ; Untyped                                 ;
+; LPM_WIDTHD             ; 2              ; Untyped                                 ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                 ;
+; LPM_PIPELINE           ; 0              ; Untyped                                 ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                 ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                 ;
+; CBXI_PARAMETER         ; lpm_divide_cem ; Untyped                                 ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                 ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                 ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                              ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                            ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                            ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                          ;
++------------------------+----------------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------+
+; Port Connectivity Checks: "AddWater:AW1" ;
++--------+-------+----------+--------------+
+; Port   ; Type  ; Severity ; Details      ;
++--------+-------+----------+--------------+
+; enable ; Input ; Info     ; Stuck at VCC ;
++--------+-------+----------+--------------+
 
 
 +-------------------------------+
@@ -233,7 +328,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 26 20:56:04 2020
+    Info: Processing started: Mon Oct 26 23:03:43 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TP -c TP
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
@@ -260,17 +355,70 @@ Info (12021): Found 2 design units, including 1 entities, in source file addwate
 Info (12021): Found 2 design units, including 1 entities, in source file tb_addwater.vhd
     Info (12022): Found design unit 1: tb_AddWater-testbench
     Info (12023): Found entity 1: tb_AddWater
-Info (12127): Elaborating entity "AddWater" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file washmachine.vhd
+    Info (12022): Found design unit 1: WashMachine-rtl
+    Info (12023): Found entity 1: WashMachine
+Info (12127): Elaborating entity "WashMachine" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at WashMachine.vhd(60): inferring latch(es) for signal or variable "prox_state", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at WashMachine.vhd(60): inferring latch(es) for signal or variable "addWaterEnable", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at WashMachine.vhd(60): inferring latch(es) for signal or variable "prev_state", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "prev_state.STP" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prev_state.ST3" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prev_state.ST2" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prev_state.ST1" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prev_state.ST0" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "addWaterEnable" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prox_state.STP" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prox_state.ST3" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prox_state.ST2" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prox_state.ST1" at WashMachine.vhd(60)
+Info (10041): Inferred latch for "prox_state.ST0" at WashMachine.vhd(60)
+Info (12128): Elaborating entity "ClothesLevel" for hierarchy "ClothesLevel:CL1"
+Info (12128): Elaborating entity "AddWater" for hierarchy "AddWater:AW1"
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "ClothesLevel:CL1|Div0"
+Info (12130): Elaborated megafunction instantiation "ClothesLevel:CL1|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "ClothesLevel:CL1|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "14"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cem.tdf
+    Info (12023): Found entity 1: lpm_divide_cem
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_mlh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e2f.tdf
+    Info (12023): Found entity 1: alt_u_div_e2f
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_lkc.tdf
+    Info (12023): Found entity 1: add_sub_lkc
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_mkc.tdf
+    Info (12023): Found entity 1: add_sub_mkc
+Warning (13012): Latch prox_state.ST1_264 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal prev_button
+Warning (13012): Latch prox_state.ST2_255 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal prev_button
+Warning (13012): Latch prev_state.ST1_216 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal curr_state.ST2
+Warning (13012): Latch prev_state.ST2_206 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal curr_state.ST2
+Warning (13012): Latch prox_state.STP_237 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal curr_state.ST2
+Warning (13012): Latch prox_state.ST0_273 has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal prev_button
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "turnOnMotor" is stuck at GND
+    Warning (13410): Pin "openValve" is stuck at GND
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 32 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 16 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4635 megabytes
-    Info: Processing ended: Mon Oct 26 20:56:06 2020
+Info (21057): Implemented 222 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 50 input pins
+    Info (21059): Implemented 5 output pins
+    Info (21061): Implemented 167 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 19 warnings
+    Info: Peak virtual memory: 4656 megabytes
+    Info: Processing ended: Mon Oct 26 23:03:45 2020
     Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

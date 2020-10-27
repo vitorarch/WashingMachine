@@ -1,6 +1,8 @@
 
-State Machine - |timer|curr_state
-Name curr_state.ST2 curr_state.ST1 curr_state.ST0 
-curr_state.ST0 0 0 0 
-curr_state.ST1 0 1 1 
-curr_state.ST2 1 0 1 
+State Machine - |WashMachine|curr_state
+Name curr_state.STP curr_state.ST3 curr_state.ST2 curr_state.ST1 curr_state.ST0 
+curr_state.ST0 0 0 0 0 0 
+curr_state.ST1 0 0 0 1 1 
+curr_state.ST2 0 0 1 0 1 
+curr_state.ST3 0 1 0 0 1 
+curr_state.STP 1 0 0 0 1 

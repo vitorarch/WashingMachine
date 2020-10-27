@@ -10,7 +10,15 @@
 # ** Warning: Copied D:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
 #          Updated modelsim.ini.
 # 
-# vcom -93 -work work {D:/altera/Projetos/TP/AddWater.vhd}
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/ClothesLevel.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity ClothesLevel
+# -- Compiling architecture estrutural of ClothesLevel
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/AddWater.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -18,8 +26,16 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity AddWater
 # -- Compiling architecture rtl of AddWater
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity WashMachine
+# -- Compiling architecture rtl of WashMachine
 # 
-# vcom -93 -work work {D:/altera/Projetos/TP/tb_AddWater.vhd}
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -43,3 +59,51 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run 30 ns
+vsim -voptargs=+acc work.washmachine
+# vsim -voptargs=+acc work.washmachine 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.washmachine(rtl)
+# Loading work.clotheslevel(estrutural)
+# Loading work.addwater(rtl)
+add wave -position insertpoint sim:/washmachine/*
+force -freeze sim:/washmachine/clock 0 0
+force -freeze sim:/washmachine/DistanceSensor1 111111111111 0
+force -freeze sim:/washmachine/DistanceSensor2 111111111111 0
+force -freeze sim:/washmachine/DistanceSensor3 111111111010 0
+force -freeze sim:/washmachine/WaterSensor 000000000000 0
+force -freeze sim:/washmachine/button 0 0
+run
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /washmachine/CL1
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /washmachine/CL1
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /washmachine/CL1
+# ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 1  Instance: /washmachine/CL1
+force -freeze sim:/washmachine/clock 1 0, 0 {50 ps} -r 100
+run
+noforce sim:/washmachine/button
+force -freeze sim:/washmachine/button 1 0
+run
+run
+force -freeze sim:/washmachine/button 0 0
+run
+force -freeze sim:/washmachine/WaterSensor 011111111111 0
+run
+run
+force -freeze sim:/washmachine/WaterSensor 111111111111 0
+run
+run
+force -freeze sim:/washmachine/button 1 0
+run
+run
+force -freeze sim:/washmachine/button 0 0
+run
+force -freeze sim:/washmachine/button 1 0
+run
+run
+run
