@@ -1,5 +1,5 @@
 Flow report for TP
-Mon Oct 26 23:03:56 2020
+Tue Oct 27 19:53:35 2020
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Mon Oct 26 23:03:56 2020           ;
+; Flow Status                        ; Successful - Tue Oct 27 19:53:35 2020           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; TP                                              ;
 ; Top-level Entity Name              ; WashMachine                                     ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C35F672C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 163 / 33,216 ( < 1 % )                          ;
-;     Total combinational functions  ; 163 / 33,216 ( < 1 % )                          ;
-;     Dedicated logic registers      ; 5 / 33,216 ( < 1 % )                            ;
-; Total registers                    ; 5                                               ;
+; Total logic elements               ; 181 / 33,216 ( < 1 % )                          ;
+;     Total combinational functions  ; 181 / 33,216 ( < 1 % )                          ;
+;     Dedicated logic registers      ; 10 / 33,216 ( < 1 % )                           ;
+; Total registers                    ; 10                                              ;
 ; Total pins                         ; 55 / 475 ( 12 % )                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/26/2020 23:03:43 ;
+; Start date & time ; 10/27/2020 19:53:22 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TP                  ;
 +-------------------+---------------------+
@@ -75,12 +75,13 @@ applicable agreement for further details.
 +--------------------------------------+-------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                         ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+-------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 1098079358301.160376422314724 ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 1098079358301.160383920218900 ; --            ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; testbench      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; tb_DrainOut    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; tb_timer       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; tb_AddWater    ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_AddWater                   ; --            ; --          ; eda_simulation ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --          ; tb_WashMachine ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_WashMachine                ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                          ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)        ; <None>        ; --          ; --             ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE               ; --            ; --          ; eda_simulation ;
@@ -88,18 +89,22 @@ applicable agreement for further details.
 ; EDA_TEST_BENCH_FILE                  ; tb_DrainOut.vhd               ; --            ; --          ; tb_DrainOut    ;
 ; EDA_TEST_BENCH_FILE                  ; tb_timer.vhd                  ; --            ; --          ; tb_timer       ;
 ; EDA_TEST_BENCH_FILE                  ; tb_AddWater.vhd               ; --            ; --          ; tb_AddWater    ;
+; EDA_TEST_BENCH_FILE                  ; tb_WashMachine.vhd            ; --            ; --          ; tb_WashMachine ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; testbench                     ; --            ; --          ; testbench      ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_DrainOut                   ; --            ; --          ; tb_DrainOut    ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_timer                      ; --            ; --          ; tb_timer       ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; tb_AddWater                   ; --            ; --          ; tb_AddWater    ;
+; EDA_TEST_BENCH_MODULE_NAME           ; tb_WashMachine                ; --            ; --          ; tb_WashMachine ;
 ; EDA_TEST_BENCH_NAME                  ; testbench                     ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; tb_DrainOut                   ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; tb_timer                      ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_NAME                  ; tb_AddWater                   ; --            ; --          ; eda_simulation ;
+; EDA_TEST_BENCH_NAME                  ; tb_WashMachine                ; --            ; --          ; eda_simulation ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                        ; --            ; --          ; testbench      ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 45 ns                         ; --            ; --          ; tb_DrainOut    ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 5 us                          ; --            ; --          ; tb_timer       ;
 ; EDA_TEST_BENCH_RUN_SIM_FOR           ; 30 ns                         ; --            ; --          ; tb_AddWater    ;
+; EDA_TEST_BENCH_RUN_SIM_FOR           ; 100 ns                        ; --            ; --          ; tb_WashMachine ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                            ; --            ; --          ; --             ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                             ; --            ; --          ; --             ;
 ; PARTITION_COLOR                      ; 16764057                      ; --            ; WashMachine ; Top            ;
@@ -115,12 +120,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4654 MB             ; 00:00:01                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 4886 MB             ; 00:00:05                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4572 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 4548 MB             ; 00:00:01                           ;
-; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4516 MB             ; 00:00:00                           ;
-; Total                     ; 00:00:10     ; --                      ; --                  ; 00:00:09                           ;
+; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 4663 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:05     ; 1.0                     ; 4880 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4568 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:00     ; 1.0                     ; 4559 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4516 MB             ; 00:00:00                           ;
+; Total                     ; 00:00:09     ; --                      ; --                  ; 00:00:09                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

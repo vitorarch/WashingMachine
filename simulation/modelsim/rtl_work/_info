@@ -16,7 +16,7 @@ L5
 VK9_HMRKOPSWdmnDVk?i9J2
 Z8 OV;C;10.1d;51
 31
-Z9 !s108 1603764355.937000
+Z9 !s108 1603839450.969000
 Z10 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/AddWater.vhd|
 Z11 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/AddWater.vhd|
 Z12 o-93 -work work -O0
@@ -53,7 +53,7 @@ L5
 VVUS0zkDP?QcN6Ic`]6@mC3
 R8
 31
-Z17 !s108 1603764355.837000
+Z17 !s108 1603839450.790000
 Z18 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/ClothesLevel.vhd|
 Z19 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/ClothesLevel.vhd|
 R12
@@ -77,59 +77,96 @@ R12
 R13
 !s100 C1V;eA4]?[T9E4cTW5=MY0
 !i10b 1
-Etb_addwater
-Z20 w1603756647
+Edrainout
+Z20 w1603586026
 R2
 R3
 R4
 R5
-Z21 8C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd
-Z22 FC:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd
+Z21 8C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/DrainOut.vhd
+Z22 FC:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/DrainOut.vhd
 l0
 L5
-VAj8Y`Ldd;nofFKSQ323[U3
-!s100 GLG4Y>Jn9z9e]GVXDfkNS0
+V<jQAh;6lVXm<DhXSLATW`3
+R8
+31
+Z23 !s108 1603839450.870000
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/DrainOut.vhd|
+Z25 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/DrainOut.vhd|
+R12
+R13
+!s100 N@fi@bk`L[_D_GLc84>Ob2
+!i10b 1
+Artl
+R2
+R3
+R4
+DEx4 work 8 drainout 0 22 <jQAh;6lVXm<DhXSLATW`3
+l15
+L13
+VH_8WdAEd[PY6=9Y4AjMM?2
+R8
+31
+R23
+R24
+R25
+R12
+R13
+!s100 GFS]_j513diLJYM[32eW=1
+!i10b 1
+Etb_washmachine
+Z26 w1603839440
+R2
+R3
+R4
+R5
+Z27 8C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_WashMachine.vhd
+Z28 FC:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_WashMachine.vhd
+l0
+L5
+V@GnajLC`2FF3`iOORiY<31
+!s100 J2MMgDF9<CYOg]`[zBSVb0
 R8
 31
 !i10b 1
-Z23 !s108 1603764356.117000
-Z24 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd|
-Z25 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd|
+Z29 !s108 1603839451.142000
+Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_WashMachine.vhd|
+Z31 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_WashMachine.vhd|
 R12
 R13
 Atestbench
 R2
 R3
 R4
-DEx4 work 11 tb_addwater 0 22 Aj8Y`Ldd;nofFKSQ323[U3
-l24
+DEx4 work 14 tb_washmachine 0 22 @GnajLC`2FF3`iOORiY<31
+l31
 L8
-V4X@Th6FzMd`RAf@?Sdz4Y1
-!s100 kV?Rjz?>DjBRgD6YlDWcT1
+VI@Y>YcdBIhH;;I3zd[F4T2
+!s100 [liE;e10MaDZD7P9N@1Im0
 R8
 31
 !i10b 1
-R23
-R24
-R25
+R29
+R30
+R31
 R12
 R13
 Ewashmachine
-Z26 w1603764219
+Z32 w1603838617
 R2
 R3
 R4
 R5
-Z27 8C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd
-Z28 FC:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd
+Z33 8C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd
+Z34 FC:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd
 l0
 L5
 VoV=TdSKQeOXMb=bLU`MUm1
 R8
 31
-Z29 !s108 1603764356.027000
-Z30 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd|
-Z31 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd|
+Z35 !s108 1603839451.052000
+Z36 !s90 -reportprogress|300|-93|-work|work|C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd|
+Z37 !s107 C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/WashMachine.vhd|
 R12
 R13
 !s100 h>i7:EOzazd^FV7Jo?OCe1
@@ -139,15 +176,15 @@ R2
 R3
 R4
 DEx4 work 11 washmachine 0 22 oV=TdSKQeOXMb=bLU`MUm1
-l48
+l56
 L21
-VTGfA0ZkQgmn=z;iIf7KH10
+VXTT<mROWUnJX]RUX]<JEG3
 R8
 31
-R29
-R30
-R31
+R35
+R36
+R37
 R12
 R13
-!s100 AZXJT9Ie0?Ue^KA>0kM<A0
+!s100 jzka[4MDU6^BQkZ0cF]P50
 !i10b 1

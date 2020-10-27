@@ -18,6 +18,14 @@
 # -- Loading package NUMERIC_STD
 # -- Compiling entity ClothesLevel
 # -- Compiling architecture estrutural of ClothesLevel
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/DrainOut.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity DrainOut
+# -- Compiling architecture rtl of DrainOut
 # vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/AddWater.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
@@ -35,75 +43,38 @@
 # -- Compiling entity WashMachine
 # -- Compiling architecture rtl of WashMachine
 # 
-# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_AddWater.vhd}
+# vcom -93 -work work {C:/Users/joaom/OneDrive/햞ea de Trabalho/WashingMachine/tb_WashMachine.vhd}
 # Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Loading package NUMERIC_STD
-# -- Compiling entity tb_AddWater
-# -- Compiling architecture testbench of tb_AddWater
+# -- Compiling entity tb_WashMachine
+# -- Compiling architecture testbench of tb_WashMachine
 # 
-# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  tb_AddWater
-# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_AddWater 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs="+acc"  tb_WashMachine
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneii -L rtl_work -L work -voptargs=\"+acc\" -t 1ps tb_WashMachine 
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.tb_addwater(testbench)
+# Loading work.tb_washmachine(testbench)
+# Loading work.washmachine(rtl)
+# Loading work.clotheslevel(estrutural)
 # Loading work.addwater(rtl)
+# Loading work.drainout(rtl)
 # 
 # add wave *
 # view structure
 # .main_pane.structure.interior.cs.body.struct
 # view signals
 # .main_pane.objects.interior.cs.body.tree
-# run 30 ns
-vsim -voptargs=+acc work.washmachine
-# vsim -voptargs=+acc work.washmachine 
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.washmachine(rtl)
-# Loading work.clotheslevel(estrutural)
-# Loading work.addwater(rtl)
-add wave -position insertpoint sim:/washmachine/*
-force -freeze sim:/washmachine/clock 0 0
-force -freeze sim:/washmachine/DistanceSensor1 111111111111 0
-force -freeze sim:/washmachine/DistanceSensor2 111111111111 0
-force -freeze sim:/washmachine/DistanceSensor3 111111111010 0
-force -freeze sim:/washmachine/WaterSensor 000000000000 0
-force -freeze sim:/washmachine/button 0 0
-run
+# run 100 ns
 # ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /washmachine/CL1
+#    Time: 0 ps  Iteration: 0  Instance: /tb_washmachine/wash_machine/CL1
 # ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 0  Instance: /washmachine/CL1
+#    Time: 0 ps  Iteration: 0  Instance: /tb_washmachine/wash_machine/CL1
 # ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /washmachine/CL1
+#    Time: 0 ps  Iteration: 1  Instance: /tb_washmachine/wash_machine/CL1
 # ** Warning: NUMERIC_STD."<": metavalue detected, returning FALSE
-#    Time: 0 ps  Iteration: 1  Instance: /washmachine/CL1
-force -freeze sim:/washmachine/clock 1 0, 0 {50 ps} -r 100
-run
-noforce sim:/washmachine/button
-force -freeze sim:/washmachine/button 1 0
-run
-run
-force -freeze sim:/washmachine/button 0 0
-run
-force -freeze sim:/washmachine/WaterSensor 011111111111 0
-run
-run
-force -freeze sim:/washmachine/WaterSensor 111111111111 0
-run
-run
-force -freeze sim:/washmachine/button 1 0
-run
-run
-force -freeze sim:/washmachine/button 0 0
-run
-force -freeze sim:/washmachine/button 1 0
-run
-run
-run
+#    Time: 0 ps  Iteration: 1  Instance: /tb_washmachine/wash_machine/CL1

@@ -37,17 +37,26 @@ architecture rtl of WashMachine is
 				Finish              : out std_logic
 		 );
 	end component;
+	
+	component DrainOut is
+		 port ( 
+			on_off       : in  std_logic;
+			sensor_level : in  std_logic_vector(11 downto 0);
+			finished     : out std_logic := '0'
+		 );
+	end component;
 
-	type state_types is (ST0, ST1, ST2, ST3, STP);
+	type state_types is (ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7, STP);
 	signal prev_state, curr_state, prox_state: state_types := ST0;
 	signal prev_button: std_logic := '0';
 	
-	signal addWaterEnable: std_logic := '0';
-	signal addWaterFinished: std_logic := '0';
+	signal addWaterEnable, drainWaterEnable: std_logic := '0';
+	signal addWaterFinished, drainWaterFinished: std_logic := '0';
 	signal level: std_logic_vector(1 downto 0) := "00";
 begin
 	CL1: ClothesLevel port map(DistanceSensor1, DistanceSensor2, DistanceSensor3, level);
 	AW1: AddWater port map (addWaterEnable, WaterSensor, level, addWaterFinished);
+	DO1: DrainOut port map (drainWaterEnable, WaterSensor, drainWaterFinished);
 
 	sync_proc: process (clock, prox_state)
 	begin
@@ -61,11 +70,15 @@ begin
 	begin
 		case curr_state is
 			when ST0 => 
+			--	Estado inicial
 				lockDoor <= '0';
 				releaseSoap <= '0';
 				turnOnMotor <= '0';
 				turnOnWaterPump <= '0';
 				openValve <= '0';
+				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '0';
 				
 				if (button = '1' and prev_button = '0') then
 					prox_state <= ST1;
@@ -73,6 +86,7 @@ begin
 					prox_state <= ST0;
 				end if;
 			when ST1 =>
+			--	Enche mÃ¡quina de Ã¡gua
 				lockDoor <= '1';
 				releaseSoap <= '0';
 				turnOnMotor <= '0';
@@ -80,6 +94,8 @@ begin
 				openValve <= '0';
 				
 				addWaterEnable <= '1';
+				drainWaterEnable <= '0';
+				
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST1;
 					prox_state <= STP;
@@ -89,15 +105,121 @@ begin
 					prox_state <= ST1;
 				end if;
 			when ST2 => 
+			-- Libera sabÃ£o e aciona motor para lavagem
 				lockDoor <= '1';
 				releaseSoap <= '1';
-				turnOnMotor <= '0';
+				turnOnMotor <= '1';
 				turnOnWaterPump <= '0';
 				openValve <= '0';
 				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '0';
+			--	Motor <= '1';
+			
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST2;
 					prox_state <= STP;
+			--	elsif (motor finalizado) then
+			--		prox_state <= ST3
+				else 
+					prox_state <= ST2;
+				end if;
+			when ST3 => 
+			-- Drena Ã¡gua
+				lockDoor <= '1';
+				releaseSoap <= '0';
+				turnOnMotor <= '0';
+				turnOnWaterPump <= '0';
+				openValve <= '1';
+				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '1';
+				
+				if (button = '1' and prev_button = '0') then
+					prev_state <= ST3;
+					prox_state <= STP;
+				elsif (drainWaterFinished = '1') then
+					prox_state <= ST4;
+				else
+					prox_state <= ST3;
+				end if;
+			when ST4 =>
+			--	Enche mÃ¡quina de Ã¡gua de novo para enxague
+				lockDoor <= '1';
+				releaseSoap <= '0';
+				turnOnMotor <= '0';
+				turnOnWaterPump <= '1';
+				openValve <= '0';
+				
+				addWaterEnable <= '1';
+				drainWaterEnable <= '0';
+				
+				if (button = '1' and prev_button = '0') then
+					prev_state <= ST4;
+					prox_state <= STP;
+				elsif (addWaterFinished = '1') then
+					prox_state <= ST5;
+				else
+					prox_state <= ST4;
+				end if;
+			when ST5 => 
+			-- Aciona motor para enxague
+				lockDoor <= '1';
+				releaseSoap <= '0';
+				turnOnMotor <= '1';
+				turnOnWaterPump <= '0';
+				openValve <= '0';
+				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '0';
+			--	Motor <= '1';
+			
+				if (button = '1' and prev_button = '0') then
+					prev_state <= ST5;
+					prox_state <= STP;
+			--	elsif (motor finalizado) then
+			--		prox_state <= ST6
+				else 
+					prox_state <= ST5;
+				end if;
+			when ST6 => 
+			-- Drena Ã¡gua para secagem
+				lockDoor <= '1';
+				releaseSoap <= '0';
+				turnOnMotor <= '0';
+				turnOnWaterPump <= '0';
+				openValve <= '1';
+				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '1';
+				
+				if (button = '1' and prev_button = '0') then
+					prev_state <= ST6;
+					prox_state <= STP;
+				elsif (drainWaterFinished = '1') then
+					prox_state <= ST7;
+				else
+					prox_state <= ST6;
+				end if;
+			when ST7 => 
+			-- Aciona motor para secagem
+				lockDoor <= '1';
+				releaseSoap <= '0';
+				turnOnMotor <= '1';
+				turnOnWaterPump <= '0';
+				openValve <= '0';
+				
+				addWaterEnable <= '0';
+				drainWaterEnable <= '0';
+			--	Motor <= '1';
+			
+				if (button = '1' and prev_button = '0') then
+					prev_state <= ST7;
+					prox_state <= STP;
+			--	elsif (motor finalizado) then
+			--		prox_state <= ST0
+				else 
+					prox_state <= ST7;
 				end if;
 			when STP => 
 				lockDoor <= '0';

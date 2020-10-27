@@ -38,24 +38,36 @@ DistanceSensor3[9] => ClothesLevel:CL1.Sensor_distance03[9]
 DistanceSensor3[10] => ClothesLevel:CL1.Sensor_distance03[10]
 DistanceSensor3[11] => ClothesLevel:CL1.Sensor_distance03[11]
 WaterSensor[0] => AddWater:AW1.Sensor_WaterLevel[0]
+WaterSensor[0] => DrainOut:DO1.sensor_level[0]
 WaterSensor[1] => AddWater:AW1.Sensor_WaterLevel[1]
+WaterSensor[1] => DrainOut:DO1.sensor_level[1]
 WaterSensor[2] => AddWater:AW1.Sensor_WaterLevel[2]
+WaterSensor[2] => DrainOut:DO1.sensor_level[2]
 WaterSensor[3] => AddWater:AW1.Sensor_WaterLevel[3]
+WaterSensor[3] => DrainOut:DO1.sensor_level[3]
 WaterSensor[4] => AddWater:AW1.Sensor_WaterLevel[4]
+WaterSensor[4] => DrainOut:DO1.sensor_level[4]
 WaterSensor[5] => AddWater:AW1.Sensor_WaterLevel[5]
+WaterSensor[5] => DrainOut:DO1.sensor_level[5]
 WaterSensor[6] => AddWater:AW1.Sensor_WaterLevel[6]
+WaterSensor[6] => DrainOut:DO1.sensor_level[6]
 WaterSensor[7] => AddWater:AW1.Sensor_WaterLevel[7]
+WaterSensor[7] => DrainOut:DO1.sensor_level[7]
 WaterSensor[8] => AddWater:AW1.Sensor_WaterLevel[8]
+WaterSensor[8] => DrainOut:DO1.sensor_level[8]
 WaterSensor[9] => AddWater:AW1.Sensor_WaterLevel[9]
+WaterSensor[9] => DrainOut:DO1.sensor_level[9]
 WaterSensor[10] => AddWater:AW1.Sensor_WaterLevel[10]
+WaterSensor[10] => DrainOut:DO1.sensor_level[10]
 WaterSensor[11] => AddWater:AW1.Sensor_WaterLevel[11]
+WaterSensor[11] => DrainOut:DO1.sensor_level[11]
 button => comb_proc.IN1
 button => prev_button.DATAIN
 lockDoor <= lockDoor.DB_MAX_OUTPUT_PORT_TYPE
 releaseSoap <= releaseSoap.DB_MAX_OUTPUT_PORT_TYPE
-turnOnMotor <= <GND>
+turnOnMotor <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 turnOnWaterPump <= turnOnWaterPump.DB_MAX_OUTPUT_PORT_TYPE
-openValve <= <GND>
+openValve <= openValve.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |WashMachine|ClothesLevel:CL1
@@ -144,5 +156,22 @@ ClothesLevel[1] => Equal0.IN1
 ClothesLevel[1] => Equal1.IN0
 ClothesLevel[1] => Equal2.IN0
 Finish <= Finish.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|WashMachine|DrainOut:DO1
+on_off => finished.OUTPUTSELECT
+sensor_level[0] => LessThan0.IN24
+sensor_level[1] => LessThan0.IN23
+sensor_level[2] => LessThan0.IN22
+sensor_level[3] => LessThan0.IN21
+sensor_level[4] => LessThan0.IN20
+sensor_level[5] => LessThan0.IN19
+sensor_level[6] => LessThan0.IN18
+sensor_level[7] => LessThan0.IN17
+sensor_level[8] => LessThan0.IN16
+sensor_level[9] => LessThan0.IN15
+sensor_level[10] => LessThan0.IN14
+sensor_level[11] => LessThan0.IN13
+finished <= finished.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -75,19 +75,19 @@ GND*                         : A5        :        :                   :         
 GND*                         : A6        :        :                   :         : 3         :                
 GND*                         : A7        :        :                   :         : 3         :                
 GND*                         : A8        :        :                   :         : 3         :                
-GND*                         : A9        :        :                   :         : 3         :                
-GND*                         : A10       :        :                   :         : 3         :                
+WaterSensor[0]               : A9        : input  : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[10]              : A10       : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : A11       : power  :                   : 3.3V    : 3         :                
 GND                          : A12       : gnd    :                   :         :           :                
 GND+                         : A13       :        :                   :         : 4         :                
-WaterSensor[3]               : A14       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[4]           : A14       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : A15       : gnd    :                   :         :           :                
 VCCIO4                       : A16       : power  :                   : 3.3V    : 4         :                
-DistanceSensor3[2]           : A17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[8]           : A18       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[11]          : A19       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[4]           : A20       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[7]           : A21       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[4]           : A17       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[7]           : A18       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : A19       :        :                   :         : 4         :                
+GND*                         : A20       :        :                   :         : 4         :                
+GND*                         : A21       :        :                   :         : 4         :                
 GND*                         : A22       :        :                   :         : 4         :                
 GND*                         : A23       :        :                   :         : 4         :                
 VCCIO4                       : A24       : power  :                   : 3.3V    : 4         :                
@@ -164,7 +164,7 @@ GND*                         : AC17      :        :                   :         
 GND*                         : AC18      :        :                   :         : 7         :                
 GND*                         : AC19      :        :                   :         : 7         :                
 GND*                         : AC20      :        :                   :         : 7         :                
-openValve                    : AC21      : output : 3.3-V LVTTL       :         : 7         : N              
+GND*                         : AC21      :        :                   :         : 7         :                
 GND*                         : AC22      :        :                   :         : 7         :                
 GND*                         : AC23      :        :                   :         : 6         :                
 NC                           : AC24      :        :                   :         :           :                
@@ -254,18 +254,18 @@ GND*                         : B5        :        :                   :         
 GND*                         : B6        :        :                   :         : 3         :                
 GND*                         : B7        :        :                   :         : 3         :                
 GND*                         : B8        :        :                   :         : 3         :                
-GND*                         : B9        :        :                   :         : 3         :                
-GND*                         : B10       :        :                   :         : 3         :                
-releaseSoap                  : B11       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : B12       :        :                   :         : 3         :                
+WaterSensor[1]               : B9        : input  : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[6]               : B10       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor3[9]           : B11       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor3[7]           : B12       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND+                         : B13       :        :                   :         : 4         :                
-WaterSensor[7]               : B14       : input  : 3.3-V LVTTL       :         : 4         : N              
-WaterSensor[0]               : B15       : input  : 3.3-V LVTTL       :         : 4         : N              
-WaterSensor[4]               : B16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[11]          : B17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[5]           : B18       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[10]          : B19       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[7]           : B20       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[11]          : B14       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[2]           : B15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[0]           : B16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[8]           : B17       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[10]          : B18       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : B19       :        :                   :         : 4         :                
+GND*                         : B20       :        :                   :         : 4         :                
 GND*                         : B21       :        :                   :         : 4         :                
 GND*                         : B22       :        :                   :         : 4         :                
 GND*                         : B23       :        :                   :         : 4         :                
@@ -281,16 +281,16 @@ GND*                         : C6        :        :                   :         
 GND*                         : C7        :        :                   :         : 3         :                
 GND*                         : C8        :        :                   :         : 3         :                
 GND*                         : C9        :        :                   :         : 3         :                
-GND*                         : C10       :        :                   :         : 3         :                
-WaterSensor[2]               : C11       : input  : 3.3-V LVTTL       :         : 3         : N              
-turnOnWaterPump              : C12       : output : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[7]               : C10       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor3[10]          : C11       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor3[3]           : C12       : input  : 3.3-V LVTTL       :         : 3         : N              
 button                       : C13       : input  : 3.3-V LVTTL       :         : 3         : N              
 GND                          : C14       : gnd    :                   :         :           :                
 DistanceSensor3[5]           : C15       : input  : 3.3-V LVTTL       :         : 4         : N              
-WaterSensor[5]               : C16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[10]          : C17       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[6]           : C16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[8]           : C17       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : C18       : gnd    :                   :         :           :                
-DistanceSensor2[2]           : C19       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : C19       :        :                   :         : 4         :                
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
 GND*                         : C21       :        :                   :         : 4         :                
 GND*                         : C22       :        :                   :         : 4         :                
@@ -307,17 +307,17 @@ GND*                         : D6        :        :                   :         
 GND*                         : D7        :        :                   :         : 3         :                
 GND*                         : D8        :        :                   :         : 3         :                
 GND*                         : D9        :        :                   :         : 3         :                
-GND*                         : D10       :        :                   :         : 3         :                
-GND*                         : D11       :        :                   :         : 3         :                
-GND*                         : D12       :        :                   :         : 3         :                
+turnOnWaterPump              : D10       : output : 3.3-V LVTTL       :         : 3         : N              
+openValve                    : D11       : output : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[9]               : D12       : input  : 3.3-V LVTTL       :         : 3         : N              
 WaterSensor[11]              : D13       : input  : 3.3-V LVTTL       :         : 3         : N              
-WaterSensor[10]              : D14       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[7]           : D15       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[10]          : D16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[9]           : D17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[1]           : D18       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[2]           : D19       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[3]           : D20       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor3[8]           : D14       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[10]          : D15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[5]           : D16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[6]           : D17       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : D18       :        :                   :         : 4         :                
+GND*                         : D19       :        :                   :         : 4         :                
+GND*                         : D20       :        :                   :         : 4         :                
 GND*                         : D21       :        :                   :         : 4         :                
 VCCIO4                       : D22       : power  :                   : 3.3V    : 4         :                
 GND*                         : D23       :        :                   :         : 5         :                
@@ -335,15 +335,15 @@ GND*                         : E8        :        :                   :         
 VCCIO3                       : E9        : power  :                   : 3.3V    : 3         :                
 GND*                         : E10       :        :                   :         : 3         :                
 GND                          : E11       : gnd    :                   :         :           :                
-GND*                         : E12       :        :                   :         : 3         :                
+WaterSensor[2]               : E12       : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : E13       : power  :                   : 3.3V    : 3         :                
 VCCIO4                       : E14       : power  :                   : 3.3V    : 4         :                
-DistanceSensor3[9]           : E15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[0]           : E15       : input  : 3.3-V LVTTL       :         : 4         : N              
 GND                          : E16       : gnd    :                   :         :           :                
 VCCIO4                       : E17       : power  :                   : 3.3V    : 4         :                
-DistanceSensor1[3]           : E18       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : E18       :        :                   :         : 4         :                
 GND                          : E19       : gnd    :                   :         :           :                
-DistanceSensor1[0]           : E20       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : E20       :        :                   :         : 4         :                
 GND_PLL2                     : E21       : gnd    :                   :         :           :                
 GND*                         : E22       :        :                   :         : 5         :                
 GND*                         : E23       :        :                   :         : 5         :                
@@ -360,14 +360,14 @@ GND*                         : F7        :        :                   :         
 GNDA_PLL3                    : F8        : gnd    :                   :         :           :                
 GND*                         : F9        :        :                   :         : 3         :                
 GND*                         : F10       :        :                   :         : 3         :                
-GND*                         : F11       :        :                   :         : 3         :                
-GND*                         : F12       :        :                   :         : 3         :                
-WaterSensor[6]               : F13       : input  : 3.3-V LVTTL       :         : 4         : N              
-WaterSensor[8]               : F14       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[3]           : F15       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[4]           : F16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[6]           : F17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[9]           : F18       : input  : 3.3-V LVTTL       :         : 4         : N              
+turnOnMotor                  : F11       : output : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor3[1]           : F12       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor1[9]           : F13       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[3]           : F14       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[6]           : F15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[4]           : F16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[11]          : F17       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[3]           : F18       : input  : 3.3-V LVTTL       :         : 4         : N              
 GNDA_PLL2                    : F19       : gnd    :                   :         :           :                
 GND*                         : F20       :        :                   :         : 5         :                
 GND*                         : F21       :        :                   :         : 5         :                
@@ -386,14 +386,14 @@ GND_PLL3                     : G7        : gnd    :                   :         
 VCCA_PLL3                    : G8        : power  :                   : 1.2V    :           :                
 GND*                         : G9        :        :                   :         : 3         :                
 GND*                         : G10       :        :                   :         : 3         :                
-GND*                         : G11       :        :                   :         : 3         :                
-GND*                         : G12       :        :                   :         : 3         :                
-WaterSensor[1]               : G13       : input  : 3.3-V LVTTL       :         : 4         : N              
-WaterSensor[9]               : G14       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[1]           : G15       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[0]           : G16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[6]           : G17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[4]           : G18       : input  : 3.3-V LVTTL       :         : 4         : N              
+releaseSoap                  : G11       : output : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[4]               : G12       : input  : 3.3-V LVTTL       :         : 3         : N              
+DistanceSensor2[9]           : G13       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[5]           : G14       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[11]          : G15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[2]           : G16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[2]           : G17       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : G18       :        :                   :         : 4         :                
 VCCA_PLL2                    : G19       : power  :                   : 1.2V    :           :                
 GND_PLL2                     : G20       : gnd    :                   :         :           :                
 GND*                         : G21       :        :                   :         : 5         :                
@@ -413,12 +413,12 @@ GND*                         : H8        :        :                   :         
 VCCIO3                       : H9        : power  :                   : 3.3V    : 3         :                
 GND*                         : H10       :        :                   :         : 3         :                
 GND*                         : H11       :        :                   :         : 3         :                
-turnOnMotor                  : H12       : output : 3.3-V LVTTL       :         : 3         : N              
+GND*                         : H12       :        :                   :         : 3         :                
 GND                          : H13       : gnd    :                   :         :           :                
 GND                          : H14       : gnd    :                   :         :           :                
-DistanceSensor3[6]           : H15       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor3[8]           : H16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[11]          : H17       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[1]           : H15       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor2[1]           : H16       : input  : 3.3-V LVTTL       :         : 4         : N              
+DistanceSensor1[0]           : H17       : input  : 3.3-V LVTTL       :         : 4         : N              
 VCCIO4                       : H18       : power  :                   : 3.3V    : 4         :                
 GND*                         : H19       :        :                   :         : 5         :                
 VCCD_PLL2                    : H20       : power  :                   : 1.2V    :           :                
@@ -438,14 +438,14 @@ GND*                         : J7        :        :                   :         
 GND*                         : J8        :        :                   :         : 2         :                
 GND*                         : J9        :        :                   :         : 3         :                
 lockDoor                     : J10       : output : 3.3-V LVTTL       :         : 3         : N              
-GND*                         : J11       :        :                   :         : 3         :                
+WaterSensor[5]               : J11       : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : J12       : power  :                   : 3.3V    : 3         :                
-GND*                         : J13       :        :                   :         : 3         :                
-GND*                         : J14       :        :                   :         : 3         :                
+WaterSensor[8]               : J13       : input  : 3.3-V LVTTL       :         : 3         : N              
+WaterSensor[3]               : J14       : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO4                       : J15       : power  :                   : 3.3V    : 4         :                
-DistanceSensor2[1]           : J16       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor1[5]           : J17       : input  : 3.3-V LVTTL       :         : 4         : N              
-DistanceSensor2[0]           : J18       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : J16       :        :                   :         : 4         :                
+DistanceSensor1[7]           : J17       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : J18       :        :                   :         : 4         :                
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
 GND*                         : J20       :        :                   :         : 5         :                
 GND*                         : J21       :        :                   :         : 5         :                
@@ -469,7 +469,7 @@ VCCINT                       : K12       : power  :                   : 1.2V    
 VCCINT                       : K13       : power  :                   : 1.2V    :           :                
 VCCINT                       : K14       : power  :                   : 1.2V    :           :                
 VCCINT                       : K15       : power  :                   : 1.2V    :           :                
-DistanceSensor1[8]           : K16       : input  : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : K16       :        :                   :         : 4         :                
 GND*                         : K17       :        :                   :         : 4         :                
 GND*                         : K18       :        :                   :         : 5         :                
 GND*                         : K19       :        :                   :         : 5         :                

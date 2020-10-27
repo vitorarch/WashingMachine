@@ -2,52 +2,52 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'button'
-Slack : -2.163
-TNS   : -7.133
-
 Type  : Slow Model Setup 'clock'
-Slack : -1.392
-TNS   : -2.701
+Slack : -1.800
+TNS   : -14.277
 
-Type  : Slow Model Hold 'button'
-Slack : -0.932
-TNS   : -3.402
+Type  : Slow Model Setup 'curr_state.STP'
+Slack : -1.371
+TNS   : -7.199
 
 Type  : Slow Model Hold 'clock'
-Slack : 0.189
+Slack : -2.557
+TNS   : -9.720
+
+Type  : Slow Model Hold 'curr_state.STP'
+Slack : 0.407
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clock'
 Slack : -1.380
-TNS   : -6.380
+TNS   : -11.380
 
-Type  : Slow Model Minimum Pulse Width 'button'
-Slack : -1.380
-TNS   : -1.380
-
-Type  : Fast Model Setup 'button'
-Slack : -0.585
-TNS   : -1.537
+Type  : Slow Model Minimum Pulse Width 'curr_state.STP'
+Slack : 0.500
+TNS   : 0.000
 
 Type  : Fast Model Setup 'clock'
-Slack : -0.260
-TNS   : -0.329
+Slack : -0.226
+TNS   : -1.000
 
-Type  : Fast Model Hold 'button'
-Slack : -0.672
-TNS   : -2.673
+Type  : Fast Model Setup 'curr_state.STP'
+Slack : -0.218
+TNS   : -0.616
 
 Type  : Fast Model Hold 'clock'
-Slack : 0.035
+Slack : -1.597
+TNS   : -8.315
+
+Type  : Fast Model Hold 'curr_state.STP'
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clock'
 Slack : -1.380
-TNS   : -6.380
+TNS   : -11.380
 
-Type  : Fast Model Minimum Pulse Width 'button'
-Slack : -1.380
-TNS   : -1.380
+Type  : Fast Model Minimum Pulse Width 'curr_state.STP'
+Slack : 0.500
+TNS   : 0.000
 
 ------------------------------------------------------------
