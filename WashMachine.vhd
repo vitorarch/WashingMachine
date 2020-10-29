@@ -72,17 +72,14 @@ architecture rtl of WashMachine is
 	signal addWaterEnable, drainWaterEnable: std_logic := '0';
 	signal addWaterFinished, drainWaterFinished: std_logic := '0';
 	signal level: std_logic_vector(1 downto 0) := "00";
-	--- vitor
-	signal turnOnTimer, timerFinished, motor finished: std_logic := '0';
+	signal turnOnTimer, timerFinished: std_logic := '0';
 begin
 
 	-- instanciate components
 	CL1: ClothesLevel port map(DistanceSensor1, DistanceSensor2, DistanceSensor3, level);
 	AW1: AddWater port map (addWaterEnable, WaterSensor, level, addWaterFinished);
 	DO1: DrainOut port map (drainWaterEnable, WaterSensor, drainWaterFinished);
-	-- vitor
 	T1: timer port map(turnOnTimer, clock, button, timerFinished);
-	M1: Motor port map(button, timerFinished, motorFinished);
 
 	sync_proc: process (clock, prox_state)
 	begin
@@ -105,6 +102,7 @@ begin
 				
 				addWaterEnable <= '0';
 				drainWaterEnable <= '0';
+				turnOnTimer <= '0';
 				
 				if (button = '1' and prev_button = '0') then
 					prox_state <= ST1;
@@ -121,6 +119,7 @@ begin
 				
 				addWaterEnable <= '1';
 				drainWaterEnable <= '0';
+				turnOnTimer <= '0';
 				
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST1;
@@ -140,15 +139,15 @@ begin
 				
 				addWaterEnable <= '0';
 				drainWaterEnable <= '0';
+				turnOnTimer <= '1';
+				
 			--	Motor <= '1';
 			
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST2;
 					prox_state <= STP;
-				elsif (motorFinished) then
+				elsif (timerFinished = '1') then
 					prox_state <= ST3;
-			--	elsif (motor finalizado) then
-			--		prox_state <= ST3
 				else 
 					prox_state <= ST2;
 				end if;
@@ -162,6 +161,7 @@ begin
 				
 				addWaterEnable <= '0';
 				drainWaterEnable <= '1';
+				turnOnTimer <= '0';
 				
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST3;
@@ -175,12 +175,13 @@ begin
 			--	Enche mÃ¡quina de Ã¡gua de novo para enxague
 				lockDoor <= '1';
 				releaseSoap <= '0';
-				turnOnMotor <= '0';
+				turnOnMotor <= '1';
 				turnOnWaterPump <= '1';
 				openValve <= '0';
 				
 				addWaterEnable <= '1';
 				drainWaterEnable <= '0';
+				turnOnTimer <= '1';
 				
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST4;
@@ -200,13 +201,14 @@ begin
 				
 				addWaterEnable <= '0';
 				drainWaterEnable <= '0';
+				turnOnTimer <= '1';
 			--	Motor <= '1';
 			
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST5;
 					prox_state <= STP;
-			--	elsif (motor finalizado) then
-			--		prox_state <= ST6
+			   elsif (timerFinished = '1') then
+			  		prox_state <= ST6;
 				else 
 					prox_state <= ST5;
 				end if;
@@ -220,6 +222,7 @@ begin
 				
 				addWaterEnable <= '0';
 				drainWaterEnable <= '1';
+				turnOnTimer <= '1';
 				
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST6;
@@ -238,14 +241,15 @@ begin
 				openValve <= '0';
 				
 				addWaterEnable <= '0';
-				drainWaterEnable <= '0';
+				drainWaterEnable <= '0'; 
+				turnOnTimer <= '1';
 			--	Motor <= '1';
 			
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST7;
 					prox_state <= STP;
-			--	elsif (motor finalizado) then
-			--		prox_state <= ST0
+				elsif (timerFinished= '1') then
+					prox_state <= ST0;
 				else 
 					prox_state <= ST7;
 				end if;
