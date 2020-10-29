@@ -1,0 +1,79 @@
+m255
+K3
+13
+cModel Technology
+dD:\altera\13.0sp1
+Emotor
+Z0 w1603933518
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\altera\13.0sp1\WashingMachine
+Z5 8D:/altera/13.0sp1/WashingMachine/Motor.vhd
+Z6 FD:/altera/13.0sp1/WashingMachine/Motor.vhd
+l0
+L5
+Vl]c0i?UH6e<g@YOD@0Vbm2
+Z7 OV;C;10.1d;51
+32
+Z8 !s108 1603933685.495000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/altera/13.0sp1/WashingMachine/Motor.vhd|
+Z10 !s107 D:/altera/13.0sp1/WashingMachine/Motor.vhd|
+Z11 o-work work -2002 -explicit -O0
+Z12 tExplicit 1
+!s100 cmFFeB9f`7Th?RJ`@Y]lz3
+!i10b 1
+Artl
+R1
+R2
+R3
+DEx4 work 5 motor 0 22 l]c0i?UH6e<g@YOD@0Vbm2
+l15
+L13
+VZ_DmeC853DVcdn3ID8;JX0
+R7
+32
+R8
+R9
+R10
+R11
+R12
+!s100 [W@RNQcf1n;6FMz6><8CG3
+!i10b 1
+Etb_motor
+Z13 w1603933517
+R1
+R2
+R3
+R4
+Z14 8D:/altera/13.0sp1/WashingMachine/tb_Motor.vhd
+Z15 FD:/altera/13.0sp1/WashingMachine/tb_Motor.vhd
+l0
+L5
+VZ7o4HJmL_dd6Izjdj0KK63
+!s100 7<@nS_D5:CmjA>aGc8bmZ3
+R7
+32
+!i10b 1
+Z16 !s108 1603933686.403000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/altera/13.0sp1/WashingMachine/tb_Motor.vhd|
+Z18 !s107 D:/altera/13.0sp1/WashingMachine/tb_Motor.vhd|
+R11
+R12
+Atestbench
+R1
+R2
+R3
+DEx4 work 8 tb_motor 0 22 Z7o4HJmL_dd6Izjdj0KK63
+l22
+L8
+VT;k@U[FCD?Ge=N6eg=;8E2
+!s100 5WV6L>_zPMA;G48n>V>>Z2
+R7
+32
+!i10b 1
+R16
+R17
+R18
+R11
+R12

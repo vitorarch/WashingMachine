@@ -45,6 +45,25 @@ architecture rtl of WashMachine is
 			finished     : out std_logic := '0'
 		 );
 	end component;
+	
+	component timer is
+		port (
+			enable   : in  std_logic;
+			clock    : in  std_logic;
+			reset    : in  std_logic;
+			finished : out std_logic
+		);
+	 end component;
+	
+	component Motor is
+		port (
+				on_off   : in std_logic;
+				timer   : in std_logic;
+				finish  : out std_logic := '0'
+		 );
+	 end component;
+	
+	
 
 	type state_types is (ST0, ST1, ST2, ST3, ST4, ST5, ST6, ST7, STP);
 	signal prev_state, curr_state, prox_state: state_types := ST0;
@@ -53,10 +72,17 @@ architecture rtl of WashMachine is
 	signal addWaterEnable, drainWaterEnable: std_logic := '0';
 	signal addWaterFinished, drainWaterFinished: std_logic := '0';
 	signal level: std_logic_vector(1 downto 0) := "00";
+	--- vitor
+	signal turnOnTimer, timerFinished, motor finished: std_logic := '0';
 begin
+
+	-- instanciate components
 	CL1: ClothesLevel port map(DistanceSensor1, DistanceSensor2, DistanceSensor3, level);
 	AW1: AddWater port map (addWaterEnable, WaterSensor, level, addWaterFinished);
 	DO1: DrainOut port map (drainWaterEnable, WaterSensor, drainWaterFinished);
+	-- vitor
+	T1: timer port map(turnOnTimer, clock, button, timerFinished);
+	M1: Motor port map(button, timerFinished, motorFinished);
 
 	sync_proc: process (clock, prox_state)
 	begin
@@ -119,6 +145,8 @@ begin
 				if (button = '1' and prev_button = '0') then
 					prev_state <= ST2;
 					prox_state <= STP;
+				elsif (motorFinished) then
+					prox_state <= ST3;
 			--	elsif (motor finalizado) then
 			--		prox_state <= ST3
 				else 
